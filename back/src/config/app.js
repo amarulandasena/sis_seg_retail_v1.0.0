@@ -4,7 +4,7 @@
 const express = require('express');
 const usuarioRoutes = require('../routes/usuarioRoutes');
 
-// Crear el servidor.
+// Creamos el servidor.
 const app = express();
 
 // Damos formato JSON a la información que recibimos del servidor.

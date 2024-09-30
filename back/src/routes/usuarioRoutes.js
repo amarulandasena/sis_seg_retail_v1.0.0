@@ -1,17 +1,19 @@
 const { Router } = require ('express');
 
+const { crearUsuario, leerUsuario, actualizarUsuario, eliminarUsuario } = require ('../controllers/usuarioControllers');
+
 const router = Router();
 
 // Petición GET.
-router.get('/', (req, res) => {
-    const { nombre, apellido } = req.params;
-    res.send(`Su nombre y apellido son: ${nombre} ${apellido} `);
-});
+router.get('/:numIdentificacion', leerUsuario);
 
 // Petición POST.
-router.post('/', (req, res) => {
-    const { email, contrasegna } = req.body;
-    res.send(`${email} : ${contrasegna}`)
-});
+router.post('/', crearUsuario);
+
+// Petición PUT.
+router.put('/:numIdentificacion', actualizarUsuario);
+
+// Petición DELETE.
+router.delete('/:numIdentificacion', eliminarUsuario);
 
 module.exports = router;

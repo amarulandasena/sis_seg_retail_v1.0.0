@@ -3,7 +3,7 @@
 // Importamos los paquetes que necesitamos.
 const mysql2 = require('mysql2');
 
-// Crear la conexión a la BBDD.
+// Creamos la conexión a la BBDD.
 const database = mysql2.createConnection({
     host: 'localhost',
     user: 'root',
