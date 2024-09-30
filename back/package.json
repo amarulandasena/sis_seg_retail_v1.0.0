@@ -1,0 +1,15 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andres Marulanda",
+  "license": "ISC",
+  "description": "Backend para la aplicación sis_seg_retail",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
