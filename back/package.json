@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/config/index.js"
   },
   "keywords": [],
   "author": "Andres Marulanda",
   "license": "ISC",
   "description": "Backend para la aplicación sis_seg_retail",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7"
   }
 }
