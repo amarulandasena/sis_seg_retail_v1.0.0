@@ -1,0 +1,182 @@
+/*Formato general */
+.fondoSeccion {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+/* Formato para el logo de la fundación belcorp */
+#logoFundacion {
+    min-width: 190px;
+    min-height: 110px;
+}
+
+/* Controlar el tamaño del logo y evitar traslapes */
+@media screen and (max-width:1200px) {
+    #logoFundacion {
+        max-width: 190px;
+        max-height: 110px;
+    }
+}
+
+/* Formato lema fundación */
+.formatoPresentacionFundacion {
+    background-color: rgb(245, 238, 238);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    margin-right: 35px;
+    border-radius: 5px;
+}
+
+.formatoPresentacionFundacion h1 {
+    font: italic bold 30px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(40, 155, 184);
+}
+
+/* Formato para la información de la fundación */
+.formatoInfoFundacion {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+}
+
+/* Cambiamos la orientación de la informaión para evitar traslapes */
+@media screen and (max-width:754px) {
+    .formatoInfoFundacion {
+        padding: 5px 5px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+    }
+}
+
+.formatoInfoFundacion h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(40, 155, 184);
+    margin-top: 8px;
+}
+
+.formatoInfoFundacion p {
+    text-align: left;
+    line-height: 1.3em;
+    font-size: 13px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(100, 96, 96);
+}
+
+/* Formato accesos directos y catálogos */
+.formatoAccesosYproductos {
+    padding: 10px;
+}
+
+.formatoAccesosYproductos h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(40, 155, 184);
+    text-align: center;
+    margin-top: 10px;
+}
+
+#accesosDirectos ul {
+    list-style-type: none;
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    column-gap: 5px;
+}
+
+#accesosDirectos ul li {
+    min-height: 38px;
+    padding-top: 5px;
+}
+
+#accesosDirectos ul li a {
+    text-decoration: none;
+    color: rgb(80, 75, 75);
+}
+
+/* Generar el efecto del subrayado */
+#accesosDirectos ul li a:hover {
+    text-decoration: underline;
+}
+
+.formatoFondoCatalogos {
+    border-radius: 5px;
+    background-color: rgb(245, 238, 238);
+
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.distribucionCatalogos {
+    display: flex;
+    justify-content: center;
+    column-gap: 120px;
+}
+
+.formatoCatalogos {
+    max-height: 225px;
+    max-width: 225px;
+}
+
+/* Cambiamos la orientación de los catálogos */
+@media screen and (max-width:1010px) {
+    
+    .distribucionCatalogos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+    }
+
+    .formatoCatalogos {
+        max-height: 112px;
+        max-width: 112px;
+    }
+
+}
+
+/* Formato familia bel star */
+.formatoFotoColaborador {
+    width: 150px;
+    height: 200px;
+}
+
+/* Formato para el título mas las fotos */
+.formatoFamilia {
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.formatoFamilia h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(40, 155, 184);
+    text-align: center;
+}
+
+.formatoFamilia p {
+    text-align: left;
+    line-height: 1.3em;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(100, 96, 96);
+    margin-top: 4px;
+}
+
+@media screen and (max-width:1300px) {
+    .formatoFamilia p {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+ 
+
+

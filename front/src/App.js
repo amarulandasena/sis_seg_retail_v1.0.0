@@ -25,7 +25,15 @@ function App() {
           imagen = 'logo_belcorp.png'
           funcion = {setBanderaBarra}/>} />
 
-        <Route path = '/PaginaPrincipal' element = {< PaginaPrincipal />} />
+        <Route path = '/PaginaPrincipal' element = {< PaginaPrincipal 
+          imageFundacionBelcorp = 'fundacionBelcorp3.jpeg'
+          imagenEsika = 'esika.jpg'
+          imagenCyzone = 'cyzone.jpg'
+          imagenLbel = 'lbel1.jpg'
+          colaborador1 = 'colaborador1.jpg'
+          colaborador2 = 'colaborador2.jpg'
+          colaborador3 = 'colaborador3.jpg'
+          />} />
 
         <Route path = 'Usuarios' element = {< Usuarios />} />
       </Routes>
