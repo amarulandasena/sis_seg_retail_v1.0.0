@@ -11,6 +11,7 @@
   "description": "Backend para la aplicación sis_seg_retail",
   "dependencies": {
     "express": "^4.21.0",
+    "express-async-handler": "^1.2.0",
     "mysql2": "^3.11.3",
     "nodemon": "^3.1.7"
   }
