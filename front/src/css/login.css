@@ -1,0 +1,36 @@
+/* Formato a la página de ingreso a la aplicación */
+
+/* Formato a la imagen de la planta */
+.formatoPlanta {
+    background-image: url(../imagenes/belstar-planta.jpg);
+    border-radius: 10px 10px 10px 10px;
+    max-width: 750px;
+    max-height: 900px;
+}
+
+
+/* Formato al bloque de los input */
+.contenedorIngreso {
+    max-width: 740px;
+    padding: 60px 60px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+    font-family: Garamond;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.formatologo {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+@media screen and (max-width: 287px){
+    .formatologo {
+        min-width: 150px;
+        min-height: 150px;
+    }
+}

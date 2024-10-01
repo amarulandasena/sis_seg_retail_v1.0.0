@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import PieDePagina from './componentes/PieDePagina';
+import BarraDeNavegacion from './componentes/BarraDeNavegacion';
+import Certificaciones from './componentes/Certificaciones';
+import Login from './componentes/Login';
+import PaginaPrincipal from './componentes/PaginaPrincipal';
+import Usuarios from './componentes/Usuarios';
+
+import { Routes, Route} from "react-router-dom";
+import { useState } from 'react';
 
 function App() {
+
+  const [banderaBarra, setBanderaBarra] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BarraDeNavegacion 
+        banderaBarra = {banderaBarra}
+        imagen = 'logo_belcorp.png' />
+      
+      <Routes>
+        <Route path = '/' element = {< Login  
+          imagen = 'logo_belcorp.png'
+          funcion = {setBanderaBarra}/>} />
+
+        <Route path = '/PaginaPrincipal' element = {< PaginaPrincipal />} />
+
+        <Route path = 'Usuarios' element = {< Usuarios />} />
+      </Routes>
+      
+      < Certificaciones 
+        certificacion1 = 'certificacionBasc1.jpeg'
+        certificacion2 = 'certifcacionBunny1.jpeg'
+        certificacion3 = 'operadorEconomico1.jpeg'
+        certificacion4 = 'iso9901.png'/>
+      < PieDePagina />
+
     </div>
   );
 }
