@@ -11,7 +11,7 @@ const main = () => {
     })
 
     // Crear una constante para hacer el puerto dinámico.
-    const PUERTO = process.env.PUERTO || 3000;
+    const PUERTO = process.env.PUERTO || 3001;
 
     app.listen(PUERTO, () => {
         console.log(`Servidor encendido y escuchando en el puerto ${PUERTO}...`);
