@@ -5,6 +5,7 @@ import Certificaciones from './componentes/Certificaciones';
 import Login from './componentes/Login';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
 import Usuarios from './usuarios/Usuarios';
+import Tiendas from './tiendas/Tiendas';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -36,6 +37,8 @@ function App() {
           />} />
 
         <Route path = '/Usuarios' element = {< Usuarios />} />
+
+        <Route path = '/Tiendas' element = {< Tiendas />} />
       </Routes>
       
       < Certificaciones 

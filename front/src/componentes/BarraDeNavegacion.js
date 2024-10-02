@@ -28,11 +28,11 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                         </li>
 
                         <li className="nav-item">
-                            <Link to = "Usuarios" className="nav-link" aria-current="page">Administrar usuarios</Link>
+                            <Link to = "/Usuarios" className="nav-link" aria-current="page">Administrar usuarios</Link>
                         </li>
 
                         <li className="nav-item">
-                            <Link to = "" className="nav-link" aria-current="page">Administrar datos de tienda</Link>
+                            <Link to = "/Tiendas" className="nav-link" aria-current="page">Administrar datos de tienda</Link>
                         </li>
 
                         <li className="nav-item dropdown">
@@ -75,7 +75,7 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                         </li>
 
                         <li className="nav-item">
-                            <Link to = "Login" className="nav-link" aria-current="page">Cerrar Sesión</Link>
+                            <Link to = "/" className="nav-link" aria-current="page">Cerrar Sesión</Link>
                         </li>
                     </ul>
                 </div>

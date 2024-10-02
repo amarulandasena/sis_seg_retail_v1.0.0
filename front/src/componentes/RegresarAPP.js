@@ -8,7 +8,7 @@ function RegresarAPP () {
      
   return (
     <article className = "row formatoUsuarios text-center">
-      <Link to = "PaginaPrincipal" target = "_self">
+      <Link to = "/PaginaPrincipal">
         <button className ="btn btn-primary" type="button">Regresar a la página principal</button>
       </Link>
     </article>
