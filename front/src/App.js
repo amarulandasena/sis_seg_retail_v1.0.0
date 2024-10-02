@@ -4,7 +4,7 @@ import BarraDeNavegacion from './componentes/BarraDeNavegacion';
 import Certificaciones from './componentes/Certificaciones';
 import Login from './componentes/Login';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
-import Usuarios from './componentes/Usuarios';
+import Usuarios from './usuarios/Usuarios';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -35,7 +35,7 @@ function App() {
           colaborador3 = 'colaborador3.jpg'
           />} />
 
-        <Route path = 'Usuarios' element = {< Usuarios />} />
+        <Route path = '/Usuarios' element = {< Usuarios />} />
       </Routes>
       
       < Certificaciones 

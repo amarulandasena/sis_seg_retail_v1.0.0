@@ -28,7 +28,7 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                         </li>
 
                         <li className="nav-item">
-                            <Link to = "" className="nav-link" aria-current="page">Administrar usuarios</Link>
+                            <Link to = "Usuarios" className="nav-link" aria-current="page">Administrar usuarios</Link>
                         </li>
 
                         <li className="nav-item">

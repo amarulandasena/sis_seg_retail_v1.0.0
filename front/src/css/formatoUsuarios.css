@@ -1,0 +1,39 @@
+/* Formato para el módulo de usuarios */
+
+.fondoUsuarios {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.formatoUsuarios {
+   /* background-color: rgb(255, 255, 255); */
+    border: 3px solid rgb(245, 238, 238);
+    border-radius: 5px;
+    margin: 3px;
+    padding: 8px;
+
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: bold;
+    font-size: 13px;   
+}
+
+.formatoUsuarios h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(40, 155, 184);
+    text-align: center;
+}
+
+.formatoUsuarios p {
+    font-family: 'Gill Sans MT', sans-serif;
+    text-align: center;
+    color:rgb(40, 155, 184);
+    font-weight: bold;
+    font-size: 16px;
+
+    padding-top: 17px;
+}
+
+.margenBoton {
+    margin-top: 15px;
+}
