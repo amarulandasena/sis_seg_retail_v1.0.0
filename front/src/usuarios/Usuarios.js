@@ -1,6 +1,6 @@
 import React from 'react';
-import CrearUsuarios from './CrearUsuarios';
-import ModEliConsUsuario from './ModEliConsUsuario';
+import CrearModUsuarios from './CrearModUsuarios';
+import EliConsUsuario from './EliConsUsuario';
 import RegresarAPP from '../componentes/RegresarAPP';
 
 import '../css/formatoUsuarios.css';
@@ -8,14 +8,11 @@ import '../css/formatoUsuarios.css';
 function Usuarios (){
     return (
       <section className = "container-fluid fondoUsuarios">
-        < CrearUsuarios />
-        < ModEliConsUsuario 
-          funcionalidad = 'MODIFICAR USUARIO'
-          accionBoton = 'Modificar'/>
-        < ModEliConsUsuario
+        < CrearModUsuarios />
+        < EliConsUsuario
           funcionalidad = 'ELIMINAR USUARIO'
           accionBoton = 'Eliminar' />
-        < ModEliConsUsuario
+        < EliConsUsuario
           funcionalidad = 'CONSULTAR USUARIO'
           accionBoton = 'Consultar' />
         <RegresarAPP />
