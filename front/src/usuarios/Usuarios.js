@@ -9,12 +9,7 @@ function Usuarios (){
     return (
       <section className = "container-fluid fondoUsuarios">
         < CrearModUsuarios />
-        < EliConsUsuario
-          funcionalidad = 'ELIMINAR USUARIO'
-          accionBoton = 'Eliminar' />
-        < EliConsUsuario
-          funcionalidad = 'CONSULTAR USUARIO'
-          accionBoton = 'Consultar' />
+        < EliConsUsuario />
         <RegresarAPP />
       </section>    
     )

@@ -18,7 +18,7 @@ const crearUsuario = (req, res, next) => {
             res.send({message: "Usuario ya existe."})
             next(err);
         } else{
-          res.send({message: 'Usuario creado correctamente.'}); 
+            res.send({message: 'Usuario creado correctamente.'}); 
         }     
     });
 };
@@ -37,7 +37,7 @@ const actualizarUsuario = (req, res, next) => {
       res.send({message: "Usuario no existe."})
       next(err);
     } else {
-    res.send({message: 'Usuario actualizado correctamente.'}); 
+      res.send({message: 'Usuario actualizado correctamente.'}); 
     } 
   });
 };
@@ -51,16 +51,15 @@ const leerUsuario = (req, res, next) => {
   const consulta = mysql2.format(leerConsulta, [numIdentificacion]);
 
   database.query(consulta, (err, result) => {
-    if (err) {
-      res.json({ message: 'Usuario no encontrado' });
-      next(err);
-    } else  {
+    if (err) throw err;
+
+    if (result[0] !== undefined) {
       res.json(result[0]);
-    } 
+    } else {
+      res.json({ message: 'Usuario no encontrado' });
+    }
   });
 }; 
-
-/* if (result[0] !== undefined) */
 
 
 const eliminarUsuario = (req, res) => {

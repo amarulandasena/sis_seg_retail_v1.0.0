@@ -4,6 +4,7 @@
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 3px;
+    
 }
 
 .formatoUsuarios {
@@ -36,4 +37,10 @@
 
 .margenBoton {
     margin-top: 15px;
+}
+
+
+.centrado {
+    display: flex;
+    justify-content: space-between;
 }
