@@ -1,0 +1,25 @@
+/* Centrar tipo de identificación y número de identificación. */
+.centrado {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Formato para los botones de los formularios. */
+.formatoBotones {
+    margin-top: 3px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.formatoBotonesVerticales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.botonVertical {
+    margin: 10px;
+}

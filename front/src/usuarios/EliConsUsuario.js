@@ -1,7 +1,8 @@
 /* Componente que permitirá modificar, consultar o eliminar un usuario, según el evento y los props que reciba. */
 
-import { React, useState } from 'react';
-import '../css/formatoUsuarios.css';
+import { React, useState, useRef } from 'react';
+import '../css/formatoExterno.css';
+import '../css/formatoInterno.css';
 
 function EliConsUsuario () {
 
@@ -15,9 +16,28 @@ function EliConsUsuario () {
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
 
+  // Constante para la limpieza del formulario.
+  const limpiarFormulario = useRef();
+
   // Función Eliminar.
-  const eliminarUsuario = (e) => {
-    alert("Eliminando usuario");
+  const eliminarUsuario = async (e) => {
+    e.preventDefault();
+
+    if (!tipoIdentificacion || !numeroIdentificacion) {
+      alert('Ingrese todos los datos del empleado a eliminar.');
+      return;
+    }
+
+    await fetch(`http://localhost:3001/usuario/${numeroIdentificacion}`, {
+      method : 'DELETE',
+    })
+    .then((response) => response.json()) 
+    .then((data) => {
+        message = data.message;    
+    })
+
+    alert(message);
+    limpiarFormulario.current.reset();
   };
 
   // Función Consultar.
@@ -32,20 +52,22 @@ function EliConsUsuario () {
     await fetch(`http://localhost:3001/usuario/${numeroIdentificacion}`)
       .then((response) => response.json())
       .then((data) => {
-      if (data.message) {
-        message = data.message;  
-        alert(message);
-      } else {
-        setNombreUsuario(data.nombres);
-        setApellidosUsuario(data.apellidos);
-        setRol(data.rol);
-      }
+        if (data.message) {
+          message = data.message;  
+          alert(message);
+        } else {
+          setNombreUsuario(data.nombres);
+          setApellidosUsuario(data.apellidos);
+          setRol(data.rol);
+        }
     })
+
+    limpiarFormulario.current.reset();
   };
   
   return (
   <article className = "row formatoUsuarios" id = "eliminarYConsultar">
-    <form className="row g-3 text-center needs-validation centrado">
+    <form className="row g-3 text-center needs-validation centrado" ref = {limpiarFormulario}>
       <h3>CONSULTAR Y/O ELIMINAR USUARIO</h3>
       <div className ="col-md-5">
         <label htmlFor = "tipoIdentificacion" className = "form-label">Tipo de identificación</label>
@@ -62,11 +84,11 @@ function EliConsUsuario () {
         <input type="text" className="form-control" id="numeroIdentificacion"  onChange = {(e) => setNumeroIdentificacion(e.target.value)} required placeholder="Sin puntos ni comas" />
       </div>
 
-      <div className = "row formatoUsuarios">
-        <div className="col-md-6">
+      <div className = "col-md-2 formatoBotonesVerticales">
+        <div className="botonVertical">
           <button className="btn btn-primary" type="submit" onClick = {eliminarUsuario}>Eliminar</button>
         </div>
-        <div className="col-md-6">
+        <div className="botonVertical">
           <button className="btn btn-primary" type="submit" onClick = {consultarUsuario}>Consultar</button>
         </div>
       </div>

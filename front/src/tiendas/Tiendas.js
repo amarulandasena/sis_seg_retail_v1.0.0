@@ -4,7 +4,7 @@ import RegresarAPP from '../componentes/RegresarAPP';
 import ModEliConsTiendas from './ModEliConsTiendas';
 import MensajeIngresoDatos from '../componentes/MensajeIngresoDatos';
 
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function Tiendas () {
   return (

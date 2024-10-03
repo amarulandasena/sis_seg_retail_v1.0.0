@@ -1,7 +1,8 @@
 // Módulo de usuarios.
 
-import { React, useState } from 'react';
-import '../css/formatoUsuarios.css';
+import { React, useRef, useState } from 'react';
+import '../css/formatoExterno.css';
+import '../css/formatoInterno.css';
 
 function CrearModUsuarios () {
 
@@ -15,7 +16,10 @@ function CrearModUsuarios () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
-  
+
+  // Constante para la limpieza del formulario.
+  const limpiarFormulario = useRef();
+   
   // Función Crear
   const crearUsuario = async (e) => {
     e.preventDefault();
@@ -46,6 +50,7 @@ function CrearModUsuarios () {
       });
 
     alert(message);
+    limpiarFormulario.current.reset();
     };
 
   // Función Actualizar.
@@ -58,7 +63,7 @@ function CrearModUsuarios () {
       return;
     }
 
-    let datosUsuario = {'tipoIdentificacion' : tipoIdentificacion, 
+    let datosUsuario = {'tipoIdentificacion' : tipoIdentificacion,
       'nombres' : nombreUsuario, 
       'apellidos' : apellidosUsuario, 
       'rol' : rol, 
@@ -74,15 +79,16 @@ function CrearModUsuarios () {
       .then((response) => response.json())
       .then((data) => {
       message = data.message;
+      alert(message);
       });
 
-    alert("Usuario actualizado correctamente.")
+    limpiarFormulario.current.reset();
   }
 
   return (
       
     <article className = "row formatoUsuarios">
-      <form className ="row g-3 text-center needs-validation" id = "crearUsuario">   
+      <form className ="row g-3 text-center needs-validation" id = "crearModUsuario" ref = {limpiarFormulario} >   
         <h3>CREAR Y/O ACTUALIZAR USUARIO</h3>
         <p>
           <em>
@@ -131,7 +137,7 @@ function CrearModUsuarios () {
           <input type="password" class="form-control" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
         </div>
 
-        <div className = "row formatoUsuarios">
+        <div className = "row formatoBotones">
         <div className="col-md-6">
           <button className="btn btn-primary" type="submit" onClick = {crearUsuario}>Crear</button>
         </div>

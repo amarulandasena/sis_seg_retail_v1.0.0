@@ -3,9 +3,10 @@ import CrearModUsuarios from './CrearModUsuarios';
 import EliConsUsuario from './EliConsUsuario';
 import RegresarAPP from '../componentes/RegresarAPP';
 
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function Usuarios (){
+
     return (
       <section className = "container-fluid fondoUsuarios">
         < CrearModUsuarios />

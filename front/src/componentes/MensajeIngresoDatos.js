@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function MensajeIngresoDatos () {
     return (

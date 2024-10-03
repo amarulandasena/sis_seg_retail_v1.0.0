@@ -1,7 +1,7 @@
 /* Módulo para consultar, eliminar o modificar una tienda */
 
 import react from 'react';
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function ModEliConsTiendas ({ funcionalidad, accionBoton }) {
 

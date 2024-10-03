@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function RegresarAPP () {
      

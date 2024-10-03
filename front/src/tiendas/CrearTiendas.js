@@ -1,7 +1,7 @@
 // Módulo para la creación de las tiendas.
 
 import React from 'react';
-import '../css/formatoUsuarios.css';
+import '../css/formatoExterno.css';
 
 function CrearTiendas () {
 

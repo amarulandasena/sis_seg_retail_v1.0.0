@@ -33,12 +33,9 @@ const actualizarUsuario = (req, res, next) => {
   const consulta = mysql2.format(actualizarConsulta, [tipoIdentificacion, nombres, apellidos, rol, contrasegna, numIdentificacion]);
 
   database.query(consulta, (err, result) => {
-    if (err)  {
-      res.send({message: "Usuario no existe."})
-      next(err);
-    } else {
-      res.send({message: 'Usuario actualizado correctamente.'}); 
-    } 
+    if (err) throw err;
+    res.send({message: "Usuario actualizado correctamente."});
+    
   });
 };
 
@@ -56,13 +53,13 @@ const leerUsuario = (req, res, next) => {
     if (result[0] !== undefined) {
       res.json(result[0]);
     } else {
-      res.json({ message: 'Usuario no encontrado' });
+      res.json({ message: 'Usuario no encontrado.' });
     }
   });
 }; 
 
 
-const eliminarUsuario = (req, res) => {
+const eliminarUsuario = (req, res, next) => {
     
     const { numIdentificacion } = req.params;
 
@@ -70,8 +67,11 @@ const eliminarUsuario = (req, res) => {
     const consulta = mysql2.format(eliminarConsulta, [numIdentificacion]);
 
     database.query(consulta, (err, result) => {
-        if (err) throw err;
-        res.json({ message: 'Usuario eliminado' });
+        if (err) {
+          res.json({message : 'Usuario no encontrado.'});
+          next(err);
+        } else
+        res.json({ message: 'Usuario eliminado.' });
     })
 
 };
