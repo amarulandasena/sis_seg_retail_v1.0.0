@@ -10,7 +10,8 @@ const mysql2 = require('mysql2');
 const crearUsuario = (req, res, next) => {
     const { tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
 
-    const crearConsulta = `INSERT INTO usuario(tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna) VALUES(?, ?, ?, ?, ?, ?);`;
+    const crearConsulta = `INSERT INTO usuario(tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna) 
+                          VALUES(?, ?, ?, ?, ?, ?);`;
     const consulta = mysql2.format(crearConsulta, [tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna]);
 
     database.query(consulta, (err, result) => {
@@ -29,7 +30,8 @@ const actualizarUsuario = (req, res, next) => {
   const { numIdentificacion } = req.params;
   const { tipoIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
 
-  const actualizarConsulta = `UPDATE usuario SET tipoIdentificacion = ?,  nombres = ?, apellidos = ?, rol = ?, contrasegna = ? WHERE numIdentificacion = ?;`;
+  const actualizarConsulta = `UPDATE usuario SET tipoIdentificacion = ?,  nombres = ?, apellidos = ?, rol = ?, contrasegna = ? 
+                              WHERE numIdentificacion = ?;`;
   const consulta = mysql2.format(actualizarConsulta, [tipoIdentificacion, nombres, apellidos, rol, contrasegna, numIdentificacion]);
 
   database.query(consulta, (err, result) => {

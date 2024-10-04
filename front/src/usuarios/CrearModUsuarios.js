@@ -35,7 +35,7 @@ function CrearModUsuarios () {
       'nombres' : nombreUsuario, 
       'apellidos' : apellidosUsuario, 
       'rol' : rol, 
-      contrasegna : contrasegna}
+      'contrasegna' : contrasegna}
 
     await fetch('http://localhost:3001/usuario/', {
       method : 'POST',
@@ -67,7 +67,7 @@ function CrearModUsuarios () {
       'nombres' : nombreUsuario, 
       'apellidos' : apellidosUsuario, 
       'rol' : rol, 
-      contrasegna : contrasegna}
+      'contrasegna' : contrasegna}
 
     await fetch(`http://localhost:3001/usuario/${numeroIdentificacion}`, {
       method : 'PUT',
@@ -92,8 +92,9 @@ function CrearModUsuarios () {
         <h3>CREAR Y/O ACTUALIZAR USUARIO</h3>
         <p>
           <em>
-              *Ingrese el número de identificación, los nombres y apellidos como registran en el documento de identidad.<br/>
-              *Para la contraseña, asigne una de mínimo 5 caracteres.
+              * Ingrese el número de identificación, los nombres y apellidos como registran en el documento de identidad.<br/>
+              * Para la contraseña, asigne una de mínimo 5 caracteres. <br/>
+              * Para craer o actualizar un usuario, <strong> EVITE PRESIONAR ENTER </strong>, de clic en el botón correspondiente.
           </em>    
         </p>
 
@@ -138,12 +139,12 @@ function CrearModUsuarios () {
         </div>
 
         <div className = "row formatoBotones">
-        <div className="col-md-6">
-          <button className="btn btn-primary" type="submit" onClick = {crearUsuario}>Crear</button>
-        </div>
-        <div className="col-md-6">
-          <button className="btn btn-primary" type="submit" onClick = {modificarUsuario}>Actualizar</button>
-        </div>
+          <div className="col-md-6">
+            <button className="btn btn-primary" type="submit" onClick = {crearUsuario}>Crear</button>
+          </div>
+          <div className="col-md-6">
+            <button className="btn btn-primary" type="submit" onClick = {modificarUsuario}>Actualizar</button>
+          </div>
         </div>     
       </form>
     </article>

@@ -11,7 +11,7 @@ function Usuarios (){
       <section className = "container-fluid fondoUsuarios">
         < CrearModUsuarios />
         < EliConsUsuario />
-        <RegresarAPP />
+        < RegresarAPP />
       </section>    
     )
 };
