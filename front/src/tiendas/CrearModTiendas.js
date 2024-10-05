@@ -17,6 +17,7 @@ function CrearModTiendas () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
+  let rolUsuario = localStorage.getItem("rolUsuario");
 
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
@@ -28,6 +29,12 @@ function CrearModTiendas () {
     // Validamos que todos los datos sean ingresados.
     if (!codTienda || !nit || !nombreTienda || !ciudad || !direccion || !telefono || !nombreAdmin ||!telefonoAdmin){
       alert('Ingrese todos los datos de la tienda a registrar.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 
@@ -63,6 +70,12 @@ function CrearModTiendas () {
     // Validamos que todos los datos sean ingresados.
     if (!codTienda || !nit || !nombreTienda || !ciudad || !direccion || !telefono || !nombreAdmin ||!telefonoAdmin){
       alert('Ingrese todos los datos de la tienda a registrar.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 

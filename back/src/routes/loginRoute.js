@@ -13,9 +13,9 @@ const leerLogin = (req, res, next) => {
         if (err) throw err;
 
         if (result[0] !== undefined) {
-            res.json({logueado : true});
+            res.json(result[0]);
         } else {
-            res.json({ logueado : false})
+            res.json({ logueado : true})
         }
     });
 };

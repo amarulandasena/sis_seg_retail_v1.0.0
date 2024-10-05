@@ -19,6 +19,7 @@ function EliConsTiendas () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
+  let rolUsuario = localStorage.getItem("rolUsuario");
 
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
@@ -29,6 +30,12 @@ function EliConsTiendas () {
 
     if (!codTienda) {
       alert('Ingrese el código de la tienda.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 
@@ -50,6 +57,12 @@ function EliConsTiendas () {
 
     if (!codTienda) {
       alert('Ingrese el código de la tienda.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Segregador' || rolUsuario == 'Marcador') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 

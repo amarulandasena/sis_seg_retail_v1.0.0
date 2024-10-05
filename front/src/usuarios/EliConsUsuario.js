@@ -17,7 +17,8 @@ function EliConsUsuario () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
-
+  let rolUsuario = localStorage.getItem("rolUsuario");
+  
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
 
@@ -27,6 +28,12 @@ function EliConsUsuario () {
 
     if (!tipoIdentificacion || !numeroIdentificacion) {
       alert('Ingrese todos los datos del empleado a eliminar.');
+      return;
+    }
+
+  // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 

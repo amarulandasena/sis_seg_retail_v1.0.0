@@ -4,6 +4,7 @@ import { React, useRef, useState } from 'react';
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
 
+
 function CrearModUsuarios () {
 
   // Creamos los Hooks para administrar los cambios en los inputs.
@@ -14,8 +15,9 @@ function CrearModUsuarios () {
   const [rol, setRol] = useState('');
   const [contrasegna, setContrasegna] = useState('');
 
-  // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
+  // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el rol del usuario.
   let message = " ";
+  let rolUsuario = localStorage.getItem("rolUsuario");
 
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
@@ -27,6 +29,12 @@ function CrearModUsuarios () {
     // Validamos que todos los datos sean ingresados.
     if (!tipoIdentificacion || !numeroIdentificacion || !nombreUsuario || !apellidosUsuario || !rol || !contrasegna){
       alert('Ingrese todos los datos del empleado a registrar.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 
@@ -53,6 +61,7 @@ function CrearModUsuarios () {
     limpiarFormulario.current.reset();
     };
 
+
   // Función Actualizar.
   const modificarUsuario = async (e) => {
     e.preventDefault();
@@ -60,6 +69,12 @@ function CrearModUsuarios () {
     // Validamos el ingreso de los datos.
     if (!tipoIdentificacion || !numeroIdentificacion || !nombreUsuario || !apellidosUsuario || !rol || !contrasegna){
       alert('Ingrese todos los datos del empleado que desea modificar.');
+      return;
+    }
+
+    // Validar el perfil del usuario.
+    if (rolUsuario != 'Administrador') {
+      alert('Usuario no cumple con el perfil.');
       return;
     }
 

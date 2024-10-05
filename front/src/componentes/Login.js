@@ -43,10 +43,11 @@ function Login ({funcion, imagen}) {
     .then((response) => response.json())
     .then((data) => {
       if (data.logueado){
+        alert('Usuario no registrado.')
+      } else {
+        localStorage.setItem("rolUsuario", data.rol);
         alert('Bienvenido.')
         navegar('/PaginaPrincipal');
-      } else {
-        alert('Usuario no registrado.')
       }
     });
 
@@ -70,7 +71,7 @@ function Login ({funcion, imagen}) {
                 </div>
                 <button type="submit" className="btn btn-primary" onClick = {ingresar}>Ingresar</button>
             </form>
-            <button type="submit" className="btn btn-link">Olvidaste tu contraseña</button>
+            <a href = "mailto:afmsamsung1981@gmail.com?subject=Recuperar contraseña&body=Número de identificación:    email:    celular:"> Olvidaste tu contraseña </a>
         </div>
 
         
