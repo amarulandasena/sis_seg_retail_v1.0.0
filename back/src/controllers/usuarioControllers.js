@@ -55,7 +55,7 @@ const leerUsuario = (req, res, next) => {
     if (result[0] !== undefined) {
       res.json(result[0]);
     } else {
-      res.json({ message: 'Usuario no encontrado.' });
+      res.json({ message: 'Usuario no registrado.' });
     }
   });
 }; 
@@ -75,7 +75,6 @@ const eliminarUsuario = (req, res, next) => {
         } else
         res.json({ message: 'Usuario eliminado.' });
     })
-
 };
 
 module.exports = {

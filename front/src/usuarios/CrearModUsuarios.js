@@ -94,7 +94,7 @@ function CrearModUsuarios () {
           <em>
               * Ingrese el número de identificación, los nombres y apellidos como registran en el documento de identidad.<br/>
               * Para la contraseña, asigne una de mínimo 5 caracteres. <br/>
-              * Para craer o actualizar un usuario, <strong> EVITE PRESIONAR ENTER </strong>, de clic en el botón correspondiente.
+              * Para craer o actualizar un usuario, <strong> seleccione o de clic en el botón correspondiente. </strong>
           </em>    
         </p>
 

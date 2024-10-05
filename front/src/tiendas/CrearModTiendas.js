@@ -99,7 +99,7 @@ function CrearModTiendas () {
         <p>
           <em>
               *Ingrese los datos de la tienda como registran en cámara de comercio o en el rut. <br/>
-              * Para craer o actualizar una tienda, <strong> EVITE PRESIONAR ENTER </strong>, de clic en el botón correspondiente.
+              * Para craer o actualizar una tienda, <strong> seleccione o de clic en el botón correspondiente.</strong> 
           </em>
         </p>
           <div className="col-md-4">

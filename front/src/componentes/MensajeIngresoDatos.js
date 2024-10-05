@@ -8,8 +8,9 @@ function MensajeIngresoDatos () {
     <div className = "row" >
       <p>
         <em>
-            * Para actualizar o consultar los datos, <strong> EVITE PRESIONAR ENTER </strong>.<br/>
-            * De clic en el botón correspondiente.  
+            * Para actualizar o consultar los datos <br/>
+            <strong> Seleccione o de clic en el botón correspondiente. </strong>
+              
         </em>
       </p>
     </div>

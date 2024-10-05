@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path = '/' element = {< Login  
           imagen = 'logo_belcorp.png'
-          funcion = {setBanderaBarra}/>} />
+          funcion = {setBanderaBarra} />} />
 
         <Route path = '/PaginaPrincipal' element = {< PaginaPrincipal 
           imageFundacionBelcorp = 'fundacionBelcorp3.jpeg'
