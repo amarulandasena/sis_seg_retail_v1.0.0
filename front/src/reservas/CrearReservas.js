@@ -21,20 +21,24 @@ function CrearReservas () {
   let message = " ";
   let rolUsuario = localStorage.getItem("rolUsuario");
 
+
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
   const limpiarFormulario1 = useRef();
 
+
   // Arreglo para agregar el detalle de los productos.
   let detalleProductos = [];
 
-  // Objeto para almecenar los productos en el arreglo.
+
+  // Objeto para almacenar los productos en el arreglo.
   let detalleProducto = {
     'codProducto' : codProducto,
     'codReserva' : codReserva,
     'nombreProducto' : nombreProducto,
     'cantidadProducto' : cantidadProducto
   }
+
 
   // Función para enviar la información a la BBDD.
   const crearReserva = async (e) => {
@@ -76,6 +80,7 @@ function CrearReservas () {
     });
 
     limpiarFormulario.current.reset();
+    detalleProductos = [];
 
   }
 
@@ -107,20 +112,17 @@ function CrearReservas () {
       .then((data) => {
         message = data.message;
         alert(message);
+        limpiarFormulario.current.reset();
       });
 
-      limpiarFormulario.current.reset();
+     
   }
-  
-  
-  // Función para cargar productos en la tabla.
-  const agregarALista = (e) => {
-    e.preventDefault();
+
+  // Función para generar las filas de la tabla.
+  const crearTabla = () => {
 
     // Definir el contexto del formulario.
     const cuerpoTabla = document.getElementById('cuerpoTabla');
-
-    detalleProductos.push(detalleProducto);
 
     detalleProductos.forEach((det) => {
       let nuevaFila = document.createElement('tr');
@@ -128,17 +130,45 @@ function CrearReservas () {
                              <th scope="col"> ${det.codReserva} </th>
                              <th scope="col"> ${det.nombreProducto} </th>
                              <th scope="col"> ${det.cantidadProducto} </th>`
-                      
-      cuerpoTabla.appendChild(nuevaFila);
-
+      
+      let columnaBoton = document.createElement('th');
       let botonEliminar = document.createElement('button');
       botonEliminar.classList.add('btn', 'btn-danger', 'margenBoton', 'botonEliminar');
       botonEliminar.innerText = 'Eliminar';
-      nuevaFila.appendChild(botonEliminar);
+
+      botonEliminar.onclick =() => {
+        eliminarProductoLista(detalleProducto.codProducto);
+      }
+
+      columnaBoton.appendChild(botonEliminar)
+      nuevaFila.appendChild(columnaBoton);
+      cuerpoTabla.appendChild(nuevaFila);
+
     })
+  }
+  
+  
+  // Función para cargar productos en la tabla.
+  const agregarALista = (e) => {
+    e.preventDefault();
+
+    detalleProductos.push(detalleProducto);
+
+    crearTabla();
     
     limpiarFormulario1.current.reset();
     enviarLista();
+  }
+
+  
+  // Función para eliminar los productos de la pantalla.
+  const eliminarProductoLista = (codProd) => {
+    detalleProductos = detalleProductos.filter((prod) => {
+      if (codProd !== prod.codProducto){
+        return prod;
+      }
+    });
+    crearTabla();
   }
   
   return (

@@ -29,12 +29,16 @@
     margin-left: 240px;
 }
 
-/* Boton ovalado */
+/* Botón para eliminar productos de la lista */
 .botonEliminar {
-    background-color: rgb(126, 10, 10);
     color: rgb(255, 255, 255);
     max-height: 40px;
-    margin-bottom: 5px;
     margin-left: 10px;
-    padding-bottom: 10px;
+}
+
+/* Formato recuperar contraseña */ 
+.recuperarContraseña {
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: bold;
+    font-size: 13px; 
 }

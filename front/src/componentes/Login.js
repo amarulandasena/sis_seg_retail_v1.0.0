@@ -71,7 +71,7 @@ function Login ({funcion, imagen}) {
                 </div>
                 <button type="submit" className="btn btn-primary" onClick = {ingresar}>Ingresar</button>
             </form>
-            <a href = "mailto:afmsamsung1981@gmail.com?subject=Recuperar contraseña&body=Número de identificación:    email:    celular:"> Olvidaste tu contraseña </a>
+            <a href = "mailto:afmsamsung1981@gmail.com?subject=Recuperar contraseña&body=Número de identificación:    email:    celular:" className='recuperarContraseña'> Olvidaste tu contraseña </a>
         </div>
 
         
