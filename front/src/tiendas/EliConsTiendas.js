@@ -61,7 +61,7 @@ function EliConsTiendas () {
     }
 
     // Validar el perfil del usuario.
-    if (rolUsuario != 'Segregador' || rolUsuario == 'Marcador') {
+    if (rolUsuario == 'Segregador' || rolUsuario == 'Marcador') {
       alert('Usuario no cumple con el perfil.');
       return;
     }

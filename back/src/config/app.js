@@ -6,6 +6,8 @@ const cors = require('cors');
 const usuarioRoutes = require('../routes/usuarioRoutes');
 const tiendaRoutes = require('../routes/tiendaRoutes');
 const loginRoute = require('../routes/loginRoute');
+const reservaRoute = require('../routes/reservasRoutes');
+const productosRoute = require('../routes/productosRoutes');
 
 // Creamos el servidor.
 const app = express();
@@ -19,6 +21,8 @@ app.use(cors());
 app.use('/login', loginRoute);
 app.use('/usuario', usuarioRoutes);
 app.use('/tienda', tiendaRoutes);
+app.use('/reserva', reservaRoute);
+app.use('/productosReserva', productosRoute);
 
 // Exportamos app.
 module.exports = app;

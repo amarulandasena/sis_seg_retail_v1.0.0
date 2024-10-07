@@ -7,7 +7,7 @@ import '../css/formatoExterno.css';
 
 function Tiendas () {
   return (
-    <section class = "container-fluid fondoUsuarios">
+    <section className = "container-fluid fondoUsuarios">
       < CrearModTiendas />
       < EliConsTiendas />
       < RegresarAPP />

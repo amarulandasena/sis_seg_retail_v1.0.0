@@ -23,3 +23,18 @@
 .botonVertical {
     margin: 10px;
 }
+
+/* Margen izquierda del botón Cargarproductos */
+.margenBotonIzquierda {
+    margin-left: 240px;
+}
+
+/* Boton ovalado */
+.botonEliminar {
+    background-color: rgb(126, 10, 10);
+    color: rgb(255, 255, 255);
+    max-height: 40px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+}

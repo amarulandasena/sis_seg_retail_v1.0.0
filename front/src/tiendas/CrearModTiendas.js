@@ -2,6 +2,7 @@
 
 import { React, useState, useRef } from 'react';
 import '../css/formatoExterno.css';
+import '../css/formatoInterno.css';
 
 function CrearModTiendas () {
 
@@ -111,7 +112,7 @@ function CrearModTiendas () {
         <h3>CREAR Y/O ACTUALIZAR TIENDA</h3>
         <p>
           <em>
-              *Ingrese los datos de la tienda como registran en cámara de comercio o en el rut. <br/>
+              * Ingrese los datos de la tienda como registran en cámara de comercio o en el rut. <br/>
               * Para craer o actualizar una tienda, <strong> seleccione o de clic en el botón correspondiente.</strong> 
           </em>
         </p>
