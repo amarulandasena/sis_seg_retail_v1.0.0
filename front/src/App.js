@@ -4,7 +4,10 @@ import BarraDeNavegacion from './componentes/BarraDeNavegacion';
 import Certificaciones from './componentes/Certificaciones';
 import Login from './componentes/Login';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
-import Usuarios from './usuarios/Usuarios';
+import CrearUsuarios from './usuarios/CrearUsuarios';
+import ModificarUsuarios from './usuarios/ModificarUsuarios';
+import ConsultarUsuarios from './usuarios/ConsultarUsuarios';
+import EliminarUsuarios from './usuarios/EliminarUsuarios';
 import Tiendas from './tiendas/Tiendas';
 import CrearReservas from './reservas/CrearReservas';
 
@@ -37,7 +40,10 @@ function App() {
           colaborador3 = 'colaborador3.jpg'
           />} />
 
-        <Route path = '/Usuarios' element = {< Usuarios />} />
+        <Route path = '/CrearUsuarios' element = {< CrearUsuarios />} />
+        <Route path = '/ModificarUsuarios' element = {< ModificarUsuarios />} />
+        <Route path = '/ConsultarUsuarios' element = {< ConsultarUsuarios />} />
+        <Route path = '/EliminarUsuarios' element = {< EliminarUsuarios />} />
 
         <Route path = '/Tiendas' element = {< Tiendas />} />
 
@@ -49,6 +55,7 @@ function App() {
         certificacion2 = 'certifcacionBunny1.jpeg'
         certificacion3 = 'operadorEconomico1.jpeg'
         certificacion4 = 'iso9901.png'/>
+
       < PieDePagina />
 
     </div>

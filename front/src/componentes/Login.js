@@ -13,16 +13,21 @@ function Login ({funcion, imagen}) {
     return () => funcion(true);
   },[funcion]);
 
+
+  // Hooks para validar el login.
   const[numeroIdentificacion, setNumeroIdentificacion] = useState('');
   const[contrasegna, setContrasegna] = useState('');
 
+  // Redireccionar a la pantalla principal cuando el usuario se registra correctamente.
   const navegar = useNavigate();
 
+  // Limpiar los campos de usuario y contraseña.
   const limpiarFormulario = useRef();
 
   const ingresar = async (e) => {
     e.preventDefault();
     
+    // Validamos el ingreso de todos los datos.
     if (!numeroIdentificacion || !contrasegna){
       alert('Ingrese su usuario y/o contraseña.')
       return;
