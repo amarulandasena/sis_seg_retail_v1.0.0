@@ -8,12 +8,23 @@ import '../css/formatoInterno.css';
 
 function CrearReservas () {
 
+  let rolUsuario = localStorage.getItem("rolUsuario");
+  let permitir = true;
+
+  // Validar el perfil del usuario.
+  if (rolUsuario != 'Administrador' && rolUsuario != 'Digitador') {
+    alert('Usuario no cumple con el perfil.');
+    permitir = false;
+    return;
+  } 
+
   return ( 
-      <section className = "container-fluid fondoUsuarios">
-        < InfoReserva />
-        < ProductosReservas />
-        < RegresarAPP />
-      </section>  
+    (permitir) ?
+    <section className = "container-fluid fondoUsuarios">
+      < InfoReserva />
+      < ProductosReservas />
+      < RegresarAPP />
+    </section> : null
   )
 };
 

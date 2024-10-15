@@ -16,20 +16,11 @@ function InfoReserva () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
-  let rolUsuario = localStorage.getItem("rolUsuario");
-  let permitir = true;
 
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
 
-  // Validar el perfil del usuario.
-  if (rolUsuario != 'Administrador' && rolUsuario == 'Digitador') {
-    alert('Usuario no cumple con el perfil.');
-    permitir = false;
-    return;
-  } 
-
-
+  
   const crearReserva = async (e) => {
     e.preventDefault();
 
@@ -65,7 +56,7 @@ function InfoReserva () {
   }
 
   return (
-    (permitir) ?
+
     <main className = "container-fluid fondoUsuarios">
       <section className = "row formatoUsuarios">
         <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
@@ -108,7 +99,7 @@ function InfoReserva () {
           </div>
         </form>
       </section>
-    </main> : null
+    </main>
   )
 };
 

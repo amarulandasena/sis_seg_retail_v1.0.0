@@ -42,3 +42,8 @@
     font-weight: bold;
     font-size: 13px; 
 }
+
+/* Formato tabla de productos */
+.tablaProductos {
+    margin-top: 60px;
+}

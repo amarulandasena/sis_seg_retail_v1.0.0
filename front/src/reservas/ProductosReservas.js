@@ -1,4 +1,4 @@
-import { React, useState, useRef } from 'react';
+import { React, useState } from 'react';
 
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
@@ -13,18 +13,6 @@ function ProductosReservas () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
-  let rolUsuario = localStorage.getItem("rolUsuario");
-  let permitir = true;
-
-  // Validar el perfil del usuario.
-  if (rolUsuario != 'Administrador' && rolUsuario == 'Digitador') {
-    alert('Usuario no cumple con el perfil.');
-    permitir = false;
-    return;
-  } 
-
-  // Constante para la limpieza del formulario.
-  const limpiarFormulario = useRef();
 
   // Arreglo para agregar el detalle de los productos.
   let detalleProductos = [];
@@ -36,6 +24,12 @@ function ProductosReservas () {
     'nombreProducto' : nombreProducto,
     'cantidadProducto' : cantidadProducto
   }
+
+
+  let nuevaFila = document.createElement('tr');
+  let columnaBoton = document.createElement('th');
+  let botonEliminar = document.createElement('button');
+
 
   // Función para enviar los productos a la BBDD.
   const enviarLista = async () => {
@@ -57,25 +51,23 @@ function ProductosReservas () {
     .then((data) => {
       message = data.message;
       alert(message);
-      limpiarFormulario.current.reset();
     });  
   }
 
   // Función para generar las filas de la tabla.
-  const crearTabla = () => {
+  function crearTabla (arreglo) {
 
     // Definir el contexto del formulario.
     const cuerpoTabla = document.getElementById('cuerpoTabla');
 
-    detalleProductos.forEach((det) => {
-      let nuevaFila = document.createElement('tr');
+    arreglo.forEach((det) => {
+      
       nuevaFila.innerHTML = `<th scope="row"> ${det.codProducto}  </th>
                              <th scope="col"> ${det.codReserva} </th>
                              <th scope="col"> ${det.nombreProducto} </th>
                              <th scope="col"> ${det.cantidadProducto} </th>`
       
-      let columnaBoton = document.createElement('th');
-      let botonEliminar = document.createElement('button');
+      
       botonEliminar.classList.add('btn', 'btn-danger', 'margenBoton', 'botonEliminar');
       botonEliminar.innerText = 'Eliminar';
 
@@ -96,27 +88,26 @@ function ProductosReservas () {
 
     detalleProductos.push(detalleProducto);
 
-    crearTabla();
+    crearTabla(detalleProductos);
     
-    limpiarFormulario1.current.reset();
     enviarLista();
   }
 
   // Función para eliminar los productos de la pantalla.
-  const eliminarProductoLista = (codProd) => {
-    detalleProductos = detalleProductos.filter((prod) => {
-      if (codProd !== prod.codProducto){
-        return prod;
-      }
-    });
-    crearTabla();
-  }
+  function eliminarProductoLista (codProd) {
+    alert(codProd);
 
+    let detalleProductos1 = [];
+
+    detalleProductos1 = detalleProductos.filter(prod => codProd != prod.codProducto);
+
+    crearTabla(detalleProductos1);
+  }
 
   return (
     <main className = "container-fluid fondoUsuarios">
       <section className = "row formatoUsuarios">
-        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
+        <form className="row g-3 text-center needs-validation">
           <h3> INGRESAR PRODUCTOS </h3>
 
           <p>
@@ -194,8 +185,8 @@ function ProductosReservas () {
           </div>
         </form>
 
-        <div class="table-responsive">
-          <table class="table">
+        <div className="table-responsive tablaProductos">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col"> Código del producto</th>
