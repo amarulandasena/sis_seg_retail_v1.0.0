@@ -33,38 +33,47 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                   </a>
                   <ul className="dropdown-menu">
                     <li><Link to = "/CrearUsuarios" className="dropdown-item formatoMenu">Crear usuario</Link></li>
-                    <li><Link to = "/ModificarUsuarios" className="dropdown-item formatoMenu">Modificar usuario</Link></li>
+                    <li><Link to = "/ModificarUsuarios" className="dropdown-item formatoMenu">Actualizar usuario</Link></li>
                     <li><Link to = "/ConsultarUsuarios" className="dropdown-item formatoMenu">Consultar usuario</Link></li>
                     <li><Link to = "/EliminarUsuarios" className="dropdown-item formatoMenu">Eliminar usuario</Link></li>
                   </ul>                    
                 </li>
 
-                  <li className="nav-item">
-                      <Link to = "/Tiendas" className="nav-link" aria-current="page">Administrar datos de tienda</Link>
-                  </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Administrar tiendas
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to = "/CrearTiendas" className="dropdown-item formatoMenu">Crear tienda</Link></li>
+                    <li><Link to = "/ModificarTiendas" className="dropdown-item formatoMenu">Actualizar tienda</Link></li>
+                    <li><Link to = "/ConsultarTiendas" className="dropdown-item formatoMenu">Consultar tienda</Link></li>
+                    <li><Link to = "/EliminarTiendas" className="dropdown-item formatoMenu">Eliminar tienda</Link></li>
+                  </ul>                    
+                </li>
+                
 
-                  <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Administrar reservas
-                      </a>
-                      <ul className="dropdown-menu">
-                        <li><Link to = "/CrearReserva" className="dropdown-item formatoMenu">Crear reserva</Link></li>
-                        <li><Link to = "" className="dropdown-item formatoMenu">Editar reserva</Link></li>
-                        <li><Link to = "" className="dropdown-item formatoMenu">Eliminar reserva</Link></li>
-                      </ul>
-                  </li>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Administrar reservas
+                    </a>
+                    <ul className="dropdown-menu">
+                      <li><Link to = "/CrearReserva" className="dropdown-item formatoMenu">Crear reserva</Link></li>
+                      <li><Link to = "" className="dropdown-item formatoMenu">Editar reserva</Link></li>
+                      <li><Link to = "" className="dropdown-item formatoMenu">Eliminar reserva</Link></li>
+                    </ul>
+                </li>
 
-                  <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cargar productos
-                      </a>
-                      <ul className="dropdown-menu">
-                        <li><Link to = "" className="dropdown-item formatoMenu">Validar reserva</Link></li>
-                        <li><Link to = "" className="dropdown-item formatoMenu">Estados de la reserva</Link></li>
-                        <li><Link to = "" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
-                        <li><Link to = "" className="dropdown-item formatoMenu">Ingresar segregados</Link></li>
-                      </ul>
-                  </li>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cargar productos
+                    </a>
+                    <ul className="dropdown-menu">
+                      <li><Link to = "" className="dropdown-item formatoMenu">Validar reserva</Link></li>
+                      <li><Link to = "" className="dropdown-item formatoMenu">Estados de la reserva</Link></li>
+                      <li><Link to = "" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
+                      <li><Link to = "" className="dropdown-item formatoMenu">Ingresar segregados</Link></li>
+                    </ul>
+                </li>
 
                   <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

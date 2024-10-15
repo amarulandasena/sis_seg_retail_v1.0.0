@@ -1,10 +1,10 @@
-// Módulo para la creación de las tiendas.
-
 import { React, useState, useRef } from 'react';
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
 
-function CrearModTiendas () {
+import RegresarAPP from '../componentes/RegresarAPP';
+
+function CrearTiendas () {
 
   // Hooks.
   const[codTienda, setCodTienda] = useState('');
@@ -19,23 +19,25 @@ function CrearModTiendas () {
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
   let rolUsuario = localStorage.getItem("rolUsuario");
+  let permitir = true;
 
   // Constante para la limpieza del formulario.
   const limpiarFormulario = useRef();
 
-  // Función crear tienda.
+  // Validar el perfil del usuario.
+  if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
+    alert('Usuario no cumple con el perfil.');
+    permitir = false;
+    return;
+  }
+
+  
   const crearTienda = async(e) => {
     e.preventDefault();
 
     // Validamos que todos los datos sean ingresados.
     if (!codTienda || !nit || !nombreTienda || !ciudad || !direccion || !telefono || !nombreAdmin ||!telefonoAdmin){
       alert('Ingrese todos los datos de la tienda a registrar.');
-      return;
-    }
-
-    // Validar el perfil del usuario.
-    if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
-      alert('Usuario no cumple con el perfil.');
       return;
     }
 
@@ -63,59 +65,20 @@ function CrearModTiendas () {
       alert(message);
       limpiarFormulario.current.reset();
       };
-  
-  // Función Modificar tiendas.
-  const modificarTienda = async (e) => {
-    e.preventDefault();
-
-    // Validamos que todos los datos sean ingresados.
-    if (!codTienda || !nit || !nombreTienda || !ciudad || !direccion || !telefono || !nombreAdmin ||!telefonoAdmin){
-      alert('Ingrese todos los datos de la tienda a registrar.');
-      return;
-    }
-
-    // Validar el perfil del usuario.
-    if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
-      alert('Usuario no cumple con el perfil.');
-      return;
-    }
-
-    let datosTienda = {'codTienda' : codTienda, 
-      'nit' : nit, 
-      'nombreTienda' : nombreTienda, 
-      'ciudad' : ciudad, 
-      'direccion' : direccion, 
-      'telefono' : telefono,
-      'nombreAdmin' : nombreAdmin,
-      'telefonoAdmin' : telefonoAdmin}
-
-      await fetch(`http://localhost:3001/tienda/${codTienda}`, {
-        method : 'PUT',
-        headers : {
-          'Content-type' : 'application/json',
-        },
-        body : JSON.stringify(datosTienda),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-        message = data.message;
-        alert(message);
-        });
-  
-      limpiarFormulario.current.reset();
-
-  }
 
   return (
-    <article className = "row formatoUsuarios">
-      <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
-        <h3>CREAR Y/O ACTUALIZAR TIENDA</h3>
-        <p>
-          <em>
-              * Ingrese los datos de la tienda como registran en cámara de comercio o en el rut. <br/>
-              * Para craer o actualizar una tienda, <strong> seleccione o de clic en el botón correspondiente.</strong> 
-          </em>
-        </p>
+    (permitir) ?
+    <section className = "container-fluid fondoUsuarios">
+      <article className = "row formatoUsuarios">
+        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
+          <h3>CREAR TIENDA</h3>
+
+          <p>
+            <em>
+                * Ingrese los datos de la tienda como registran en cámara de comercio o en el rut. <br/>
+            </em>
+          </p>
+
           <div className="col-md-4">
             <label htmlFor="codigoTienda" className="form-label">Código tienda</label>
             <input type="text" className="form-control" id="codigoTienda" onChange = {(e)=> setCodTienda(e.target.value)} required placeholder = "Según el consecutivo" />
@@ -158,32 +121,31 @@ function CrearModTiendas () {
             </select>
           </div>
           <div className="col-md-4">
-              <label htmlFor="direccionTienda" className="form-label">Dirección</label>
-              <input type="text" className="form-control" id="direccionTienda" onChange = {(e) => setDireccion(e.target.value)} required />
+            <label htmlFor="direccionTienda" className="form-label">Dirección</label>
+            <input type="text" className="form-control" id="direccionTienda" onChange = {(e) => setDireccion(e.target.value)} required />
           </div>
           <div className="col-md-4">
-              <label htmlFor="telefonoTienda" className="form-label">Teléfono tienda</label>
-              <input type="text" class="form-control" id="telefonoTienda" onChange = {(e) => setTelefono(e.target.value)} required />
+            <label htmlFor="telefonoTienda" className="form-label">Teléfono tienda</label>
+            <input type="text" class="form-control" id="telefonoTienda" onChange = {(e) => setTelefono(e.target.value)} required />
           </div>
           <div className="col-md-4">
-              <label htmlFor="nombreAdministrador" className="form-label">Nombre del administrador</label>
-              <input type="text" className="form-control" id="nombreAdministrador" onChange = {(e) => setNombreAdmin(e.target.value)} required placeholder = "Como registra en el documento de identidad" />
+            <label htmlFor="nombreAdministrador" className="form-label">Nombre del administrador</label>
+            <input type="text" className="form-control" id="nombreAdministrador" onChange = {(e) => setNombreAdmin(e.target.value)} required placeholder = "Como registra en el documento de identidad" />
           </div>
           <div className="col-md-4">
-              <label htmlFor="telAdministrador" className="form-label">Teléfono del administrador</label>
-              <input type="text" className="form-control" id="telAdministrador" onChange = {(e) => setTelefonoAdmin(e.target.value)} required />
+            <label htmlFor="telAdministrador" className="form-label">Teléfono del administrador</label>
+            <input type="text" className="form-control" id="telAdministrador" onChange = {(e) => setTelefonoAdmin(e.target.value)} required />
           </div>
-          <div className = "row formatoBotones">
-            <div className="col-md-6">
-                <button className="btn btn-primary margenBoton" type="submit" onClick = {crearTienda} >Crear</button>
-            </div>
-            <div className="col-md-6">
-                <button className="btn btn-primary margenBoton" type="submit" onClick = {modificarTienda} >Actualizar</button>
-            </div>
-          </div>    
-      </form>  
-    </article>
+
+          <div className="col-md-4">
+              <button className="btn btn-primary margenBoton" type="submit" onClick = {crearTienda} >Crear</button>
+          </div>
+        </form>
+      </article>
+      < RegresarAPP />
+    </section> : null
+
   )
 };
 
-export default CrearModTiendas;
+export default CrearTiendas;

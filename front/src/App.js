@@ -1,14 +1,21 @@
 import './App.css';
+
 import PieDePagina from './componentes/PieDePagina';
 import BarraDeNavegacion from './componentes/BarraDeNavegacion';
 import Certificaciones from './componentes/Certificaciones';
 import Login from './componentes/Login';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
+
 import CrearUsuarios from './usuarios/CrearUsuarios';
 import ModificarUsuarios from './usuarios/ModificarUsuarios';
 import ConsultarUsuarios from './usuarios/ConsultarUsuarios';
 import EliminarUsuarios from './usuarios/EliminarUsuarios';
-import Tiendas from './tiendas/Tiendas';
+
+import CrearTiendas from './tiendas/CrearTiendas';
+import ModificarTiendas from './tiendas/ModificarTiendas';
+import EliminarTiendas from './tiendas/EliminarTiendas';
+import ConsultarTiendas from './tiendas/ConsultarTiendas';
+
 import CrearReservas from './reservas/CrearReservas';
 
 import { Routes, Route} from "react-router-dom";
@@ -45,7 +52,10 @@ function App() {
         <Route path = '/ConsultarUsuarios' element = {< ConsultarUsuarios />} />
         <Route path = '/EliminarUsuarios' element = {< EliminarUsuarios />} />
 
-        <Route path = '/Tiendas' element = {< Tiendas />} />
+        <Route path = '/CrearTiendas' element = {< CrearTiendas />} />
+        <Route path = '/ModificarTiendas' element = {< ModificarTiendas />} />
+        <Route path = '/EliminarTiendas' element = {< EliminarTiendas />} />
+        <Route path = '/ConsultarTiendas' element = {< ConsultarTiendas />} />
 
         <Route path = '/CrearReserva' element = { < CrearReservas />} />
       </Routes>
