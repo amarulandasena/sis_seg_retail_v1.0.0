@@ -57,7 +57,7 @@ function App() {
         <Route path = '/EliminarTiendas' element = {< EliminarTiendas />} />
         <Route path = '/ConsultarTiendas' element = {< ConsultarTiendas />} />
 
-        <Route path = '/CrearReserva' element = { < CrearReservas />} />
+        <Route path = '/CrearReservas' element = { < CrearReservas />} />
       </Routes>
       
       < Certificaciones 

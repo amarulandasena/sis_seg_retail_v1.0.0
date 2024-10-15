@@ -57,7 +57,7 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                       Administrar reservas
                     </a>
                     <ul className="dropdown-menu">
-                      <li><Link to = "/CrearReserva" className="dropdown-item formatoMenu">Crear reserva</Link></li>
+                      <li><Link to = "/CrearReservas" className="dropdown-item formatoMenu">Crear reserva</Link></li>
                       <li><Link to = "" className="dropdown-item formatoMenu">Editar reserva</Link></li>
                       <li><Link to = "" className="dropdown-item formatoMenu">Eliminar reserva</Link></li>
                     </ul>
