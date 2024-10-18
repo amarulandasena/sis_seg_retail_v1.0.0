@@ -15,6 +15,8 @@ import CrearTiendas from './tiendas/CrearTiendas';
 import ModificarTiendas from './tiendas/ModificarTiendas';
 import EliminarTiendas from './tiendas/EliminarTiendas';
 import ConsultarTiendas from './tiendas/ConsultarTiendas';
+import EliminarHistoricoTienda from './tiendas/EliminarHistoricoTienda';
+import ConsultarHistoricoTiendas from './tiendas/ConsultarHistoricoTiendas';
 
 import CrearReservas from './reservas/CrearReservas';
 
@@ -56,6 +58,8 @@ function App() {
         <Route path = '/ModificarTiendas' element = {< ModificarTiendas />} />
         <Route path = '/EliminarTiendas' element = {< EliminarTiendas />} />
         <Route path = '/ConsultarTiendas' element = {< ConsultarTiendas />} />
+        <Route path = '/EliminarHistorico' element = { < EliminarHistoricoTienda />} />
+        <Route path = '/ConsultarHistorico' element = { < ConsultarHistoricoTiendas />} />
 
         <Route path = '/CrearReservas' element = { < CrearReservas />} />
       </Routes>

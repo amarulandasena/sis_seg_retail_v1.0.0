@@ -25,12 +25,6 @@ function ProductosReservas () {
     'cantidadProducto' : cantidadProducto
   }
 
-
-  let nuevaFila = document.createElement('tr');
-  let columnaBoton = document.createElement('th');
-  let botonEliminar = document.createElement('button');
-
-
   // Función para enviar los productos a la BBDD.
   const enviarLista = async () => {
 
@@ -61,6 +55,10 @@ function ProductosReservas () {
     const cuerpoTabla = document.getElementById('cuerpoTabla');
 
     arreglo.forEach((det) => {
+
+      let nuevaFila = document.createElement('tr');
+      let columnaBoton = document.createElement('th');
+      let botonEliminar = document.createElement('button');
       
       nuevaFila.innerHTML = `<th scope="row"> ${det.codProducto}  </th>
                              <th scope="col"> ${det.codReserva} </th>

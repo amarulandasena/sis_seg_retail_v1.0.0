@@ -72,10 +72,10 @@ function ConsultarUsuarios () {
             <button className="btn btn-primary" type="submit" onClick = {consultarUsuario}>Consultar</button>
           </div>
         </form>
-        <div className = "row">
+        <div className = "row tablaProductos">
           <p> <strong> Datos colaborador </strong> </p>
-          <div class="table-responsive">
-            <table class="table">
+          <div className="table-responsive">
+            <table classname="table">
               <thead>
                 <tr>
                   <th scope="col"> Tipo de identificación </th>

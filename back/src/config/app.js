@@ -8,6 +8,7 @@ const tiendaRoutes = require('../routes/tiendaRoutes');
 const loginRoute = require('../routes/loginRoute');
 const reservaRoute = require('../routes/reservasRoutes');
 const productosRoute = require('../routes/productosRoutes');
+const historicoRoute = require('../routes/historicoRoutes');
 
 // Creamos el servidor.
 const app = express();
@@ -23,6 +24,7 @@ app.use('/usuario', usuarioRoutes);
 app.use('/tienda', tiendaRoutes);
 app.use('/reserva', reservaRoute);
 app.use('/productosReserva', productosRoute);
+app.use('/historico', historicoRoute);
 
 // Exportamos app.
 module.exports = app;

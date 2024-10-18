@@ -70,13 +70,6 @@ const eliminarTienda = (req, res, next) => {
     })
 };
 
-/* Se deben conectar con los routes de las reservas 
-const leerHistorico =  async (req, res, next) => {
- 
-};
-
-*/
-
 module.exports = {
   crearTienda,
   actualizarTienda,

@@ -86,10 +86,10 @@ function ConsultarTiendas () {
           </div>
         </form>
 
-        <div className = "row">
+        <div className = "row tablaProductos">
           <p> <strong> Datos de la tienda </strong> </p>
-          <div class="table-responsive">
-            <table class="table">
+          <div className="table-responsive">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col"> Código de la tienda </th>

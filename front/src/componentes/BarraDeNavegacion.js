@@ -48,6 +48,8 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                     <li><Link to = "/ModificarTiendas" className="dropdown-item formatoMenu">Actualizar tienda</Link></li>
                     <li><Link to = "/ConsultarTiendas" className="dropdown-item formatoMenu">Consultar tienda</Link></li>
                     <li><Link to = "/EliminarTiendas" className="dropdown-item formatoMenu">Eliminar tienda</Link></li>
+                    <li><Link to = "/EliminarHistorico" className="dropdown-item formatoMenu">Eliminar histórico de tienda</Link></li>
+                    <li><Link to = "/ConsultarHistorico" className="dropdown-item formatoMenu">Consultar histórico de tienda</Link></li>
                   </ul>                    
                 </li>
                 

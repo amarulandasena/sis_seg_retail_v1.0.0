@@ -19,8 +19,6 @@ const crearReserva = (req, res, next) => {
   });
 };
 
-
-
 module.exports = {
 	crearReserva
 } 
