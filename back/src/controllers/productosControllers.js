@@ -2,11 +2,29 @@ const database = require('../config/database');
 const mysql2 = require('mysql2');
 
 
+const leerProducto = (req, res, next) => {
+
+  const { codReserva } = req.params;
+
+  const leerConsulta = 'SELECT * FROM productosreserva WHERE codReserva = ?;';
+  const consulta = mysql2.format(leerConsulta, [codReserva]);
+
+  database.query(consulta, (err, result) => {
+    if (err) throw err;
+
+    if (result.length !== 0) {
+      res.json(result);
+    } else {
+      res.json({ message : 'Producto no registrado.'})
+    }
+  });
+}
+
 const crearProductosReserva = (req, res, next) => {
 
 	const { codReserva, codProducto, nombreProducto, cantidadProducto } = req.body;
 
-	crearConsultaProductos = `INSERT INTO productosreserva(codProducto, codReserva, nombreProducto, cantidadProducto) VALUES(?, ?, ?, ?);`;
+	const crearConsultaProductos = `INSERT INTO productosreserva(codProducto, codReserva, nombreProducto, cantidadProducto) VALUES(?, ?, ?, ?);`;
 	const consulta = mysql2.format(crearConsultaProductos, [codProducto, codReserva, nombreProducto, cantidadProducto]);
 
 	database.query(consulta, (err, result) => {
@@ -39,5 +57,6 @@ const eliminarProductosReserva = (req, res, next) => {
 
 module.exports = {
   crearProductosReserva,
-	eliminarProductosReserva
+	eliminarProductosReserva,
+  leerProducto
 }

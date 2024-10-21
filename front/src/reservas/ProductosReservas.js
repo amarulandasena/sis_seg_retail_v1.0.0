@@ -14,9 +14,6 @@ function ProductosReservas () {
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
 
-  // Arreglo para agregar el detalle de los productos.
-  let detalleProductos = [];
-
   // Objeto para almacenar los productos en el arreglo.
   let detalleProducto = {
     'codProducto' : codProducto,
@@ -25,9 +22,51 @@ function ProductosReservas () {
     'cantidadProducto' : cantidadProducto
   }
 
-  // Función para enviar los productos a la BBDD.
-  const enviarLista = async () => {
+  // Función para generar las filas de la tabla.
+    async function crearTabla () {
 
+    // Definir el contexto del formulario.
+    const cuerpoTabla = document.getElementById('cuerpoTabla');
+
+    let nuevaFila = document.createElement('tr');
+    let columnaBoton = document.createElement('th');
+    let botonEliminar = document.createElement('button');
+
+    await fetch(`http://localhost:3001/productosReserva/${codReserva}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if(data.message){
+        message = data.message;  
+        alert(message);
+      } else {
+        console.log(data);
+
+        data.forEach((prod) => {
+
+          nuevaFila.remove();
+
+          nuevaFila.innerHTML = `<th scope="row"> ${prod.codProducto}  </th>
+                                 <th scope="col"> ${prod.codReserva} </th>
+                                 <th scope="col"> ${prod.nombreProducto} </th>
+                                 <th scope="col"> ${prod.cantidadProducto} </th>`
+
+          botonEliminar.classList.add('btn', 'btn-danger', 'margenBoton', 'botonEliminar');
+          botonEliminar.innerText = 'Eliminar';
+
+          columnaBoton.appendChild(botonEliminar);
+          nuevaFila.appendChild(columnaBoton);
+          cuerpoTabla.appendChild(nuevaFila);
+
+        })
+      }
+    })
+  } 
+
+  
+  // Función para enviar los productos a la BBDD.
+  const enviarLista = async (e) => {
+    e.preventDefault();
+    
     // Validamos que todos los datos sean ingresados.
     if (!codReserva || !codProducto || !nombreProducto || !cantidadProducto){
       alert('Ingrese todos los datos del producto.');
@@ -45,62 +84,13 @@ function ProductosReservas () {
     .then((data) => {
       message = data.message;
       alert(message);
+      crearTabla();
     });  
   }
 
-  // Función para generar las filas de la tabla.
-  function crearTabla (arreglo) {
+  
 
-    // Definir el contexto del formulario.
-    const cuerpoTabla = document.getElementById('cuerpoTabla');
-
-    arreglo.forEach((det) => {
-
-      let nuevaFila = document.createElement('tr');
-      let columnaBoton = document.createElement('th');
-      let botonEliminar = document.createElement('button');
-      
-      nuevaFila.innerHTML = `<th scope="row"> ${det.codProducto}  </th>
-                             <th scope="col"> ${det.codReserva} </th>
-                             <th scope="col"> ${det.nombreProducto} </th>
-                             <th scope="col"> ${det.cantidadProducto} </th>`
-      
-      
-      botonEliminar.classList.add('btn', 'btn-danger', 'margenBoton', 'botonEliminar');
-      botonEliminar.innerText = 'Eliminar';
-
-      botonEliminar.onclick =() => {
-        eliminarProductoLista(detalleProducto.codProducto);
-      }
-
-      columnaBoton.appendChild(botonEliminar)
-      nuevaFila.appendChild(columnaBoton);
-      cuerpoTabla.appendChild(nuevaFila);
-
-    })
-  }
-
-  // Función para cargar productos en la tabla.
-  const agregarALista = (e) => {
-    e.preventDefault();
-
-    detalleProductos.push(detalleProducto);
-
-    crearTabla(detalleProductos);
-    
-    enviarLista();
-  }
-
-  // Función para eliminar los productos de la pantalla.
-  function eliminarProductoLista (codProd) {
-    alert(codProd);
-
-    let detalleProductos1 = [];
-
-    detalleProductos1 = detalleProductos.filter(prod => codProd != prod.codProducto);
-
-    crearTabla(detalleProductos1);
-  }
+  
 
   return (
     <main className = "container-fluid fondoUsuarios">
@@ -179,7 +169,7 @@ function ProductosReservas () {
             <input type="number" step ="1" className="form-control" id="cantidadProducto" onChange = {(e)=> setCantidadProducto(e.target.value)} required />
           </div>
           <div className="col-md-4">
-            <button className="btn btn-primary margenBoton" type="submit" onClick = {agregarALista}>Agregar</button>
+            <button className="btn btn-primary margenBoton" type="submit" onClick = {enviarLista}>Agregar</button>
           </div>
         </form>
 
