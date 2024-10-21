@@ -4,13 +4,11 @@ import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
 
 import RegresarAPP from '../componentes/RegresarAPP';
-import ConsultarHistoricoTiendas from './ConsultarHistoricoTiendas';
 
 function EliminarHistoricoTienda () {
 
   // Hooks.
   const[codTienda, setCodTienda] = useState('');
-  const[codReserva, setCodReserva] = useState('');
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API).
   let message = " ";
@@ -50,38 +48,36 @@ function EliminarHistoricoTienda () {
   }
 
   // Función para eliminar el historial de la BBDD.
-  const eliminarHistorial = async (e) => {
-    e.preventDefault();
-
+  const eliminarHistorial = async () => {
+   
     await fetch(`http://localhost:3001/historico/${codTienda}`, {
       method : 'DELETE',
     })
     .then((response) => response.json()) 
     .then((data) => {
-        message = data.message;    
+      message = data.message;  
+      alert(message);  
     })
-
-    alert(message);
     limpiarFormulario.current.reset();
   }
 
   // Función para eliminar los productos de la reserva.
   const eliminarProductosReserva = async (codReserva) => {
 
-    await fetch(`http://localhost:3001/historico/${codReserva}`, {
+    await fetch(`http://localhost:3001/productosReserva/${codReserva}`, {
       method : 'DELETE',
     })
     .then((response) => response.json())
     .then((data) => {
-        message = data.message;
+      message = data.message;
+      alert(message);
     })
 
-    alert(message);
-    eliminarHistorial();
   }
 
   // Función para consultar el listado de reservas.
-  const consultarHistoricoTienda = async () => {
+  const consultarHistoricoTienda = async (e) => {
+    e.preventDefault();
 
     await fetch(`http://localhost:3001/historico/${codTienda}`)
       .then((response) => response.json())
@@ -90,9 +86,13 @@ function EliminarHistoricoTienda () {
           message = data.message;  
           alert(message);
         } else {
+          console.log(data);
+
           data.forEach((reserva) => {
             eliminarProductosReserva(reserva.codReserva);
-          }) 
+          })
+
+          eliminarHistorial();
         }
       })
   }

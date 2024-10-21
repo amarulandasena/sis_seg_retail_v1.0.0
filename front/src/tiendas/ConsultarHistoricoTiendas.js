@@ -28,7 +28,6 @@ function ConsultarHistoricoTiendas () {
 
   const generarLista = (data) => {
 
-    console.log(data);
     const cuerpoTabla = document.getElementById('cuerpoTabla');
 
     data.forEach((reserva) => {

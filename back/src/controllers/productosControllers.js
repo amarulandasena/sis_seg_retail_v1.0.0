@@ -11,15 +11,33 @@ const crearProductosReserva = (req, res, next) => {
 
 	database.query(consulta, (err, result) => {
 		if (err)  {
-				res.send({message: "Error en el registro del producto."})
-				next(err);
+      res.send({message: "Error en el registro del producto."})
+      next(err);
 		} else{
-				res.send({message: 'Producto registrado correctamente.'}); 
+			res.send({message: 'Producto registrado correctamente.'}); 
 		}     
 	});
 
 };
 
+const eliminarProductosReserva = (req, res, next) => {
+
+	const { codReserva } = req.params;
+  
+	const eliminarConsulta = `DELETE FROM productosreserva WHERE codReserva = ?;`;
+	const consulta = mysql2.format(eliminarConsulta, [codReserva]);
+  
+	database.query(consulta, (err, result) => {
+	  if (err) {
+		res.json({message : 'Productos no encontrados.'});
+		next(err);
+	  } else
+	  res.json({ message: 'Productos eliminados correctamente.' });
+	})
+  
+  }
+
 module.exports = {
-    crearProductosReserva
+  crearProductosReserva,
+	eliminarProductosReserva
 }

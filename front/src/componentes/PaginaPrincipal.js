@@ -62,7 +62,7 @@ function PaginaPrincipal (props) {
           </div>
         </article>
 
-        <article class = "row formatoFamilia">
+        <article className = "row formatoFamilia">
           <h3> NUESTRA FAMILIA BEL STAR </h3>
           <div className = "col-12 col-xl-2 text-center">
               <img src = {require(`../imagenes/${props.colaborador1}`)} alt = "Marcos Resca" class = "formatoFotoColaborador rounded" />
