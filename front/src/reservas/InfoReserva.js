@@ -90,8 +90,6 @@ function InfoReserva () {
             <select className="form-select" id="estadoReserva" onChange = {(e) => setEstadoReserva(e.target.value)} required>
               <option selected disabled value="">Seleccione el estado</option>
               <option>FRACCIONADA</option>
-              <option>MARCADA</option>
-              <option>SEGREGADA</option>
             </select>
           </div>
           <div className="col-md-4">

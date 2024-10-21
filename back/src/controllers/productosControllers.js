@@ -20,6 +20,8 @@ const leerProducto = (req, res, next) => {
   });
 }
 
+
+// Ingresar cada uno de los productos de la reserva en la BBDD.
 const crearProductosReserva = (req, res, next) => {
 
 	const { codReserva, codProducto, nombreProducto, cantidadProducto } = req.body;
@@ -40,23 +42,25 @@ const crearProductosReserva = (req, res, next) => {
 
 const eliminarProductosReserva = (req, res, next) => {
 
-	const { codReserva } = req.params;
+	const { codProducto, codReserva } = req.body;
   
-	const eliminarConsulta = `DELETE FROM productosreserva WHERE codReserva = ?;`;
-	const consulta = mysql2.format(eliminarConsulta, [codReserva]);
+	const eliminarConsulta = `DELETE FROM productosreserva WHERE codProducto = ? AND codReserva = ?;`;
+	const consulta = mysql2.format(eliminarConsulta, [codProducto, codReserva]);
   
 	database.query(consulta, (err, result) => {
 	  if (err) {
-		res.json({message : 'Productos no encontrados.'});
+		res.json({message : 'Producto no encontrado.'});
 		next(err);
 	  } else
-	  res.json({ message: 'Productos eliminados correctamente.' });
+	  res.json({ message: 'Producto eliminado correctamente.' });
 	})
   
   }
 
+  
+
 module.exports = {
   crearProductosReserva,
-	eliminarProductosReserva,
+  eliminarProductosReserva,
   leerProducto
 }

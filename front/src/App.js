@@ -19,6 +19,7 @@ import EliminarHistoricoTienda from './tiendas/EliminarHistoricoTienda';
 import ConsultarHistoricoTiendas from './tiendas/ConsultarHistoricoTiendas';
 
 import CrearReservas from './reservas/CrearReservas';
+import EditarReservas from './reservas/EditarReservas';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -62,6 +63,8 @@ function App() {
         <Route path = '/ConsultarHistorico' element = { < ConsultarHistoricoTiendas />} />
 
         <Route path = '/CrearReservas' element = { < CrearReservas />} />
+        <Route path = '/EditarReservas' element = { < EditarReservas />} />
+
       </Routes>
       
       < Certificaciones 

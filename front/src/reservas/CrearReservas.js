@@ -1,4 +1,4 @@
-import { React, useState, useRef } from 'react';
+import { React } from 'react';
 import InfoReserva from './InfoReserva';
 import ProductosReservas from './ProductosReservas';
 import RegresarAPP from '../componentes/RegresarAPP';

@@ -8,7 +8,7 @@ const router = Router();
 router.post('/', crearProductosReserva);
 
 // Petición DELETE productos de la reserva.
-router.delete('/:codReserva', eliminarProductosReserva);
+router.delete('/:codProducto', eliminarProductosReserva);
 
 // Petición GET.
 router.get('/:codReserva', leerProducto);

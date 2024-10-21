@@ -1,9 +1,9 @@
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
 
-function ProductosReservas () {
+function AgregarProductosReserva () {
 
   // Hooks.
   const[codReserva, setCodReserva] = useState('');
@@ -13,9 +13,12 @@ function ProductosReservas () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
+  
+  // Constante para la limpieza del formulario.
+  const limpiarFormulario = useRef();
 
-  // Objeto para almacenar los productos en el arreglo.
-  let detalleProducto = {
+   // Objeto para almacenar los productos en el arreglo.
+   let detalleProducto = {
     'codProducto' : codProducto,
     'codReserva' : codReserva,
     'nombreProducto' : nombreProducto,
@@ -23,7 +26,7 @@ function ProductosReservas () {
   }
 
   // Función para generar las filas de la tabla.
-    async function crearTabla () {
+  async function crearTabla () {
 
     // Definir el contexto del formulario.
     const cuerpoTabla = document.getElementById('cuerpoTabla');
@@ -53,17 +56,16 @@ function ProductosReservas () {
     })
   } 
 
-  
-  // Función para enviar los productos a la BBDD.
-  const enviarLista = async (e) => {
+  // Función para anexar productos a la reserva.
+  const anexarProducto = async (e) => {
     e.preventDefault();
-    
+
     // Validamos que todos los datos sean ingresados.
     if (!codReserva || !codProducto || !nombreProducto || !cantidadProducto){
       alert('Ingrese todos los datos del producto.');
     return;
     }
-    
+
     await fetch('http://localhost:3001/productosReserva/', {
       method : 'POST',
       headers : {
@@ -76,21 +78,16 @@ function ProductosReservas () {
       message = data.message;
       alert(message);
       crearTabla();
-    });  
-  }
+    }); 
 
+    limpiarFormulario.current.reset();
+  }
 
   return (
     <main className = "container-fluid fondoUsuarios">
       <section className = "row formatoUsuarios">
-        <form className="row g-3 text-center needs-validation">
-          <h3> INGRESAR PRODUCTOS </h3>
-
-          <p>
-            <em>
-              <strong> * Ingrese primero todos los productos incluidos dentro de la reserva. </strong>
-            </em>
-          </p>
+        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
+          <h3> ANEXAR PRODUCTOS </h3>
 
           <div className="col-md-4">
             <label htmlFor="codigoReserva" className="form-label">Código reserva</label>
@@ -157,12 +154,10 @@ function ProductosReservas () {
             <input type="number" step ="1" className="form-control" id="cantidadProducto" onChange = {(e)=> setCantidadProducto(e.target.value)} required />
           </div>
           <div className="col-md-4">
-            <button className="btn btn-primary margenBoton" type="submit" onClick = {enviarLista}>Agregar</button>
+            <button className="btn btn-primary margenBoton" type="submit" onClick = {anexarProducto}>Anexar</button>
           </div>
         </form>
-      </section>
 
-      <section className = "row formatoUsuarios"> 
         <div className="table-responsive tablaProductos">
           <table className="table">
             <thead>
@@ -178,9 +173,9 @@ function ProductosReservas () {
             </tbody>
           </table>
         </div>
-      </section>        
+      </section> 
     </main>
   )
 };
 
-export default ProductosReservas;
+export default AgregarProductosReserva;
