@@ -37,10 +37,11 @@ function EliminarTiendas () {
     })
     .then((response) => response.json()) 
     .then((data) => {
-        message = data.message;    
+        message = data.message;   
+        alert(message); 
     })
 
-    alert(message);
+    
     limpiarFormulario.current.reset();
   }
 

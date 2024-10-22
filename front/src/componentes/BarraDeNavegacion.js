@@ -61,7 +61,7 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                     <ul className="dropdown-menu">
                       <li><Link to = "/CrearReservas" className="dropdown-item formatoMenu">Crear reserva</Link></li>
                       <li><Link to = "/EditarReservas" className="dropdown-item formatoMenu">Editar reserva</Link></li>
-                      <li><Link to = "" className="dropdown-item formatoMenu">Eliminar reserva</Link></li>
+                      <li><Link to = "/EliminarReservas" className="dropdown-item formatoMenu">Eliminar reserva</Link></li>
                     </ul>
                 </li>
 
@@ -70,8 +70,8 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                       Cargar productos
                     </a>
                     <ul className="dropdown-menu">
-                      <li><Link to = "" className="dropdown-item formatoMenu">Validar reserva</Link></li>
-                      <li><Link to = "" className="dropdown-item formatoMenu">Estados de la reserva</Link></li>
+                      <li><Link to = "/ValidarReservas" className="dropdown-item formatoMenu">Validar reserva</Link></li>
+                      <li><Link to = "/ConsultarReservas" className="dropdown-item formatoMenu">Consultar reserva</Link></li>
                       <li><Link to = "" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
                       <li><Link to = "" className="dropdown-item formatoMenu">Ingresar segregados</Link></li>
                     </ul>

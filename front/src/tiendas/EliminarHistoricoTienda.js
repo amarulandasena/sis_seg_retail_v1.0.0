@@ -48,8 +48,9 @@ function EliminarHistoricoTienda () {
   }
 
   // Función para eliminar el historial de la BBDD.
-  const eliminarHistorial = async () => {
-   
+  const eliminarHistorial = async (e) => {
+    e.preventDefault();
+
     await fetch(`http://localhost:3001/historico/${codTienda}`, {
       method : 'DELETE',
     })
@@ -60,42 +61,7 @@ function EliminarHistoricoTienda () {
     })
     limpiarFormulario.current.reset();
   }
-
-  // Función para eliminar los productos de la reserva.
-  const eliminarProductosReserva = async (codReserva) => {
-
-    await fetch(`http://localhost:3001/productosReserva/${codReserva}`, {
-      method : 'DELETE',
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      message = data.message;
-      alert(message);
-    })
-
-  }
-
-  // Función para consultar el listado de reservas.
-  const consultarHistoricoTienda = async (e) => {
-    e.preventDefault();
-
-    await fetch(`http://localhost:3001/historico/${codTienda}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.message) {
-          message = data.message;  
-          alert(message);
-        } else {
-          console.log(data);
-
-          data.forEach((reserva) => {
-            eliminarProductosReserva(reserva.codReserva);
-          })
-
-          eliminarHistorial();
-        }
-      })
-  }
+  
 
   return (
     (permitir) ?
@@ -118,7 +84,7 @@ function EliminarHistoricoTienda () {
             <button className="btn btn-primary" type="submit" onClick={buscarTienda}>BUSCAR</button>
           </div>
           <div className="col-md-4">
-            <button className="btn btn-primary" type="submit" onClick={consultarHistoricoTienda} >ELIMINAR</button>
+            <button className="btn btn-primary" type="submit" onClick={eliminarHistorial} >ELIMINAR</button>
           </div>
         </form>
       </article>  

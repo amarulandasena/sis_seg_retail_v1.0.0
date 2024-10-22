@@ -33,7 +33,45 @@ const actualizarReserva = (req, res, next) => {
   });
 }
 
+const eliminarReserva = (req, res, next) => {
+
+
+  const { codReserva } = req.params;
+
+  const eliminarConsulta = `DELETE FROM reserva WHERE codReserva = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [codReserva]);
+
+  database.query(consulta, (err, result) => {
+    if (err) {
+      res.json({message : 'Reserva no encontrada.'});
+      next(err);
+    } else
+      res.json({ message: 'Reserva eliminada.' });
+  })
+}
+
+const leerReserva = (req, res, next) => {
+
+  const { codReserva } = req.params;
+
+  const leerConsulta = `SELECT * FROM reserva WHERE codReserva = ?;`;
+  const consulta = mysql2.format(leerConsulta, [codReserva]);
+
+  database.query(consulta, (err, result) => {
+    if (err) throw err;
+
+    if (result[0] !== undefined) {
+      res.json(result[0]);
+    } else {
+      res.json({ message: 'Reserva no registrada.' });
+    }
+  });
+}
+
+
 module.exports = {
 	crearReserva,
-  actualizarReserva
+  actualizarReserva,
+  eliminarReserva,
+  leerReserva
 } 

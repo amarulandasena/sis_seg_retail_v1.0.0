@@ -20,6 +20,10 @@ import ConsultarHistoricoTiendas from './tiendas/ConsultarHistoricoTiendas';
 
 import CrearReservas from './reservas/CrearReservas';
 import EditarReservas from './reservas/EditarReservas';
+import EliminarReservas from './reservas/EliminarReservas';
+
+import ValidarReservas from './cargarProductos/ValidarReserva';
+import ConsultarReservas from './cargarProductos/ConsultarReservas';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -64,6 +68,10 @@ function App() {
 
         <Route path = '/CrearReservas' element = { < CrearReservas />} />
         <Route path = '/EditarReservas' element = { < EditarReservas />} />
+        <Route path = '/EliminarReservas' element = { < EliminarReservas />} />
+
+        <Route path = '/ValidarReservas' element = {< ValidarReservas />} />
+        <Route path = 'ConsultarReservas' element = { < ConsultarReservas />} />
 
       </Routes>
       

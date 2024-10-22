@@ -13,5 +13,6 @@ router.delete('/:codProducto', eliminarProductosReserva);
 // Petición GET.
 router.get('/:codReserva', leerProducto);
 
+
 module.exports = router;
 

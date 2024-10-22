@@ -55,9 +55,8 @@ const eliminarProductosReserva = (req, res, next) => {
 	  res.json({ message: 'Producto eliminado correctamente.' });
 	})
   
-  }
+}
 
-  
 
 module.exports = {
   crearProductosReserva,
