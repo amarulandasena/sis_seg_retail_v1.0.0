@@ -72,8 +72,9 @@ function BarraDeNavegacion ({ banderaBarra, imagen }) {
                     <ul className="dropdown-menu">
                       <li><Link to = "/ValidarReservas" className="dropdown-item formatoMenu">Validar reserva</Link></li>
                       <li><Link to = "/ConsultarReservas" className="dropdown-item formatoMenu">Consultar reserva</Link></li>
-                      <li><Link to = "" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
-                      <li><Link to = "" className="dropdown-item formatoMenu">Ingresar segregados</Link></li>
+                      <li><Link to = "/CambiarEstado" className="dropdown-item formatoMenu">Cambiar estado reserva</Link></li>
+                      <li><Link to = "/RegistrarMarcado" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
+                      <li><Link to = "/RegistrarSegregado" className="dropdown-item formatoMenu">Registrar segregado</Link></li>
                     </ul>
                 </li>
 

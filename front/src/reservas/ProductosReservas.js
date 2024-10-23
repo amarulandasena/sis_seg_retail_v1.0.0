@@ -37,7 +37,6 @@ function ProductosReservas () {
         message = data.message;  
         alert(message);
       } else {
-        console.log(data);
 
         data.forEach((prod) => {
 

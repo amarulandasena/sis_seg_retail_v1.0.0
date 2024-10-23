@@ -24,6 +24,8 @@ import EliminarReservas from './reservas/EliminarReservas';
 
 import ValidarReservas from './cargarProductos/ValidarReserva';
 import ConsultarReservas from './cargarProductos/ConsultarReservas';
+import RegistrarMarcado from './cargarProductos/RegistrarMarcado';
+import CambiarEstadoReserva from './cargarProductos/CambiarEstadoReserva';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -72,6 +74,8 @@ function App() {
 
         <Route path = '/ValidarReservas' element = {< ValidarReservas />} />
         <Route path = 'ConsultarReservas' element = { < ConsultarReservas />} />
+        <Route path = '/RegistrarMarcado' element = { < RegistrarMarcado />} />
+        <Route path = '/CambiarEstado' element = { < CambiarEstadoReserva />} />
 
       </Routes>
       
