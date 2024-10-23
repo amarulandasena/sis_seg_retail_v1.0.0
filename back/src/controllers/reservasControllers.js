@@ -45,8 +45,10 @@ const eliminarReserva = (req, res, next) => {
     if (err) {
       res.json({message : 'Reserva no encontrada.'});
       next(err);
-    } else
+    } else {
       res.json({ message: 'Reserva eliminada.' });
+    }
+      
   })
 }
 

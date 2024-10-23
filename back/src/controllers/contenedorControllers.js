@@ -28,13 +28,54 @@ const actualizarEtiqueta = (req, res, next) => {
   const consulta = mysql2.format(actualizarConsulta, [codSalida, fechaFacturacion, codTienda, codReserva, codContenedor]);
 
   database.query(consulta, (err, result) => {
-    if (err) throw err;
-    res.send({message: "Etiqueta actualizada correctamente."});
-    
+    if (err) {
+      res.send({message : "Etiqueta no encontrada."})
+      next(err);
+    } else {
+      res.send({message: "Etiqueta actualizada correctamente."});
+    }
   });
-}
+};
+
+const eliminarEtiqueta = (req, res, next) => {
+
+  const { codContenedor } = req.params;
+
+  const eliminarConsulta = `DELETE FROM contenedor WHERE codContenedor = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [codContenedor]);
+
+  database.query(consulta, (err, result) => {
+    if (err) {
+      res.send({message : 'Etiqueta no encontrada.'});
+      next(err);
+    } else {
+      res.send({ message: 'Etiqueta eliminada.' });
+    }
+    
+  })
+};
+
+const leerEtiqueta = (req, res, next) => {   
+
+  const { codContenedor } = req.params;
+
+  const leerConsulta = `SELECT * FROM contenedor WHERE codContenedor = ?;`;
+  const consulta = mysql2.format(leerConsulta, [codContenedor]);
+
+  database.query(consulta, (err, result) => {
+    if (err) throw err;
+
+    if (result[0] !== undefined) {
+      res.json(result[0]);
+    } else {
+      res.json({ message: 'Etiqueta no registrada.' });
+    }
+  });
+}; 
 
 module.exports = {
   crearEtiqueta,
-  actualizarEtiqueta
+  actualizarEtiqueta,
+  eliminarEtiqueta,
+  leerEtiqueta
 }

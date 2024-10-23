@@ -30,10 +30,12 @@ const eliminarHistorico = (req, res, next) => {
 
   database.query(consulta, (err, result) => {
     if (err) {
-      res.json({message : 'Reservas no encontradas.'});
       next(err);
-    } else
-    res.json({ message: 'Reservas eliminadas correctamente.' });
+      res.json({message : 'Reservas no encontradas.'});
+    } else {
+      res.json({ message: 'Reservas eliminadas correctamente.' });
+    }
+    
   })
 }
 

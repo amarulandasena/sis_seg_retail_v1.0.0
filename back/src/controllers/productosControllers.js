@@ -51,8 +51,10 @@ const eliminarProductosReserva = (req, res, next) => {
 	  if (err) {
 		res.json({message : 'Producto no encontrado.'});
 		next(err);
-	  } else
-	  res.json({ message: 'Producto eliminado correctamente.' });
+	  } else {
+		res.json({ message: 'Producto eliminado correctamente.' });
+	  }
+	  
 	})
   
 }

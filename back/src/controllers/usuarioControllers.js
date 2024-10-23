@@ -35,9 +35,12 @@ const actualizarUsuario = (req, res, next) => {
   const consulta = mysql2.format(actualizarConsulta, [tipoIdentificacion, nombres, apellidos, rol, contrasegna, numIdentificacion]);
 
   database.query(consulta, (err, result) => {
-    if (err) throw err;
-    res.send({message: "Usuario actualizado correctamente."});
-    
+    if (err) {
+      res.send({message : "Usuario no encontrado."});
+      next(err);
+    } else {
+      res.send({message: "Usuario actualizado correctamente."});
+    } 
   });
 };
 
@@ -72,8 +75,9 @@ const eliminarUsuario = (req, res, next) => {
         if (err) {
           res.json({message : 'Usuario no encontrado.'});
           next(err);
-        } else
-        res.json({ message: 'Usuario eliminado.' });
+        } else {
+          res.json({ message: 'Usuario eliminado.' });
+        }  
     })
 };
 

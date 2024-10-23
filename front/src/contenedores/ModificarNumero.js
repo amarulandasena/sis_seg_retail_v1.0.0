@@ -71,6 +71,12 @@ function ModificarNumero () {
         <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
           <h3> MODIFICAR NÚMERO DE CONTENEDOR </h3>
 
+          <p>
+            <em>
+              * Ingrese el código de la etiqueta que desea eliminar. <br/>
+            </em>
+          </p>
+
           <div className="col-md-4">
             <label htmlFor="codigoContenedor" className="form-label">Código contenedor</label>
             <input type="text" className="form-control" id="codigoContenedor" onChange = {(e)=> setCodContenedor(e.target.value)} required />

@@ -37,8 +37,8 @@ function EliminarTiendas () {
     })
     .then((response) => response.json()) 
     .then((data) => {
-        message = data.message;   
-        alert(message); 
+      message = data.message;   
+      alert(message); 
     })
 
     

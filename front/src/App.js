@@ -30,6 +30,8 @@ import IngresarSegregado from './cargarProductos/IngresarSegregado';
 
 import AsignarNumero from './contenedores/AsignarNumero';
 import ModificarNumero from './contenedores/ModificarNumero';
+import EliminarNumero from './contenedores/EliminarNumero';
+import ConsultarNumero from './contenedores/ConsultarNumero';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -84,6 +86,8 @@ function App() {
 
         <Route path = '/AsignarNumero' element = { < AsignarNumero />} />
         <Route path = '/ModificarNumero' element = { < ModificarNumero /> } />
+        <Route path = '/EliminarNumero' element = { < EliminarNumero /> } />
+        <Route path = '/ConsultarNumero' element = { < ConsultarNumero /> } />
 
       </Routes>
       
