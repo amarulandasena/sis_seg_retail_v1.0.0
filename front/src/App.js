@@ -28,6 +28,9 @@ import RegistrarMarcado from './cargarProductos/RegistrarMarcado';
 import CambiarEstadoReserva from './cargarProductos/CambiarEstadoReserva';
 import IngresarSegregado from './cargarProductos/IngresarSegregado';
 
+import AsignarNumero from './contenedores/AsignarNumero';
+import ModificarNumero from './contenedores/ModificarNumero';
+
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
 
@@ -78,6 +81,9 @@ function App() {
         <Route path = '/RegistrarMarcado' element = { < RegistrarMarcado />} />
         <Route path = '/CambiarEstado' element = { < CambiarEstadoReserva />} />
         <Route path = 'RegistrarSegregado' element = { < IngresarSegregado />} />
+
+        <Route path = '/AsignarNumero' element = { < AsignarNumero />} />
+        <Route path = '/ModificarNumero' element = { < ModificarNumero /> } />
 
       </Routes>
       

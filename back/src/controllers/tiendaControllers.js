@@ -22,6 +22,7 @@ const crearTienda = (req, res, next) => {
 }
 
 const actualizarTienda = (req, res, next) => {
+  
     const {codTienda} = req.params;
     const {nit, nombreTienda, ciudad, direccion, telefono, nombreAdmin, telefonoAdmin} = req.body;
 

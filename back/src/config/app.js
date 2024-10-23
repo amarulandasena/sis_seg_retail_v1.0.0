@@ -10,6 +10,7 @@ const reservaRoute = require('../routes/reservasRoutes');
 const productosRoute = require('../routes/productosRoutes');
 const historicoRoute = require('../routes/historicoRoutes');
 const cargarRoute = require('../routes/cargarRoutes');
+const contenedorRoute = require('../routes/contenedorRoutes');
 
 // Creamos el servidor.
 const app = express();
@@ -27,6 +28,7 @@ app.use('/reserva', reservaRoute);
 app.use('/productosReserva', productosRoute);
 app.use('/historico', historicoRoute);
 app.use('/cargarProductos', cargarRoute);
+app.use('/contenedores', contenedorRoute);
 
 
 // Exportamos app.

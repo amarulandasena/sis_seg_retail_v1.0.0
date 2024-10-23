@@ -83,8 +83,8 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
                 Contenedores
               </a>
               <ul className="dropdown-menu">
-                <li><Link to="" className="dropdown-item formatoMenu">Asignar número contenedor</Link></li>
-                <li><Link to="" className="dropdown-item formatoMenu">Modificar número contenedor</Link></li>
+                <li><Link to="/AsignarNumero" className="dropdown-item formatoMenu">Asignar número contenedor</Link></li>
+                <li><Link to="/ModificarNumero" className="dropdown-item formatoMenu">Modificar número contenedor</Link></li>
                 <li><Link to="" className="dropdown-item formatoMenu">Eliminar número contenedor</Link></li>
                 <li><Link to="" className="dropdown-item formatoMenu">Consultar número contenedor</Link></li>
               </ul>
