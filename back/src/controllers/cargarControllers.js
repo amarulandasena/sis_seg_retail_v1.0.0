@@ -5,7 +5,7 @@ const leerCodigosReservas = (req, res, next) => {
 
   const { codTienda } = req.params;
 
-  const leerConsulta = `SELECT codReserva, fechaFacturacion FROM reserva WHERE codTienda = ?;`;
+  const leerConsulta = `SELECT codReserva, fechaFacturacion, estadoReserva FROM reserva WHERE codTienda = ?;`;
   const consulta = mysql2.format(leerConsulta, [codTienda]);
 
   database.query(consulta, (err, result) => {

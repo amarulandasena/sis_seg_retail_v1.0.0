@@ -1,4 +1,4 @@
-/* Componente para el marcado de los productos (validación de cantidades físicas y lógicas y asignación del código) */
+/* Componente para la confirmación de la coincidencia de las cantidades lógicas y físicas */
 
 import { React, useState, useRef } from 'react';
 
@@ -7,12 +7,12 @@ import '../css/formatoInterno.css';
 
 import RegresarAPP from '../componentes/RegresarAPP';
 
-function RegistrarMarcado () {
+function IngresarSegregado () {
 
   // Hooks.
   const[codTienda, setCodTienda] = useState('');
-  const[codReserva, setCodReserva] = useState('');
   const[fechaFacturacion, setFechaFacturacion] = useState('');
+  const[codReserva, setCodReserva] = useState('');
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
@@ -23,12 +23,11 @@ function RegistrarMarcado () {
   const limpiarFormulario = useRef();
 
   // Validar el perfil del usuario.
-  if (rolUsuario != 'Marcador' && rolUsuario != 'Administrador') {
+  if (rolUsuario != 'Segregador' && rolUsuario != 'Administrador') {
     alert('Usuario no cumple con el perfil.');
     permitir = false;
     return;
   }
-
 
   // Función para generar el listado de reservas.
   const generarLista = (data) => {
@@ -39,7 +38,7 @@ function RegistrarMarcado () {
 
     let data1 = [];
     
-    data1 = data.filter(reserva => reserva.fechaFacturacion == fechaFacturacion);
+    data1 = data.filter(reserva => reserva.fechaFacturacion == fechaFacturacion && reserva.estadoReserva == 'MARCADA');
 
     data1.forEach((reserva) => {
 
@@ -71,6 +70,7 @@ function RegistrarMarcado () {
         generarLista(data);
       }
     })
+
     limpiarFormulario.current.reset();
   }
 
@@ -110,7 +110,7 @@ function RegistrarMarcado () {
           nuevoCheck.innerHTML = `<div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                      Marcado
+                                      Segregado
                                     </label>
                                   </div>`                   
 
@@ -121,15 +121,16 @@ function RegistrarMarcado () {
         })
       }
     })
+
     limpiarFormulario.current.reset();
   }
 
   return (
-    (permitir) ?
+    (permitir) ? 
     <main className = "container-fluid fondoUsuarios">
       <section className = "row formatoUsuarios">
         <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
-          <h3> REGISTRAR MARCADO </h3>
+          <h3> INGRESAR SEGREGADO </h3>
 
           <p>
             <em>
@@ -168,14 +169,14 @@ function RegistrarMarcado () {
       </section>
 
       <section className = "row formatoUsuarios">
-        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}> 
+        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
           <div className="col-md-4">
             <label htmlFor="codigoReserva" className="form-label">Código reserva</label>
             <input type="text" className="form-control" id="codigoReserva" onChange = {(e)=> setCodReserva(e.target.value)} required />
           </div>
           <div className="col-md-4">
             <button className="btn btn-primary margenBoton" type="submit" onClick = {buscarProductos} >Cargar productos</button>
-          </div> 
+          </div>
         </form> 
       </section>
 
@@ -200,7 +201,8 @@ function RegistrarMarcado () {
       </section>
       < RegresarAPP />
     </main> : null
+      
   )
 };
 
-export default RegistrarMarcado;
+export default IngresarSegregado;

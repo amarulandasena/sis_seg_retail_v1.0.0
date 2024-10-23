@@ -70,7 +70,7 @@ function ModificarUsuarios () {
       <article className = "row formatoUsuarios">
         
         <form className ="row g-3 text-center needs-validation" id = "crearModUsuario" ref = {limpiarFormulario} >   
-          <h3>ACTUALIZAR USUARIO</h3>
+          <h3>MODIFICAR USUARIO</h3>
           <p>
             <em>
                 * Ingrese el número de identificación, los nombres y apellidos como registran en el documento de identidad.<br/>

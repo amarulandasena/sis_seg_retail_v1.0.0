@@ -38,26 +38,26 @@ function PaginaPrincipal (props) {
           <div className = "col-12 col-sm-3 col-xl-3" id = "accesosDirectos">
             <h3> ACCESOS DIRECTOS </h3>
             <ul>
-              <li><Link to = "">Confirmar salidas</Link></li>
-              <li><Link to = "">Generar datos de productividad</Link></li>
+              <li><Link to="/ConsultarUsuarios" className="dropdown-item formatoMenu">Consultar usuario</Link></li>
+              <li><Link to="/CrearReservas" className="dropdown-item formatoMenu">Crear reserva</Link></li>
+              <li><Link to="/RegistrarMarcado" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
+              <li><Link to="/RegistrarSegregado" className="dropdown-item formatoMenu">Ingresar segregado</Link></li>
               <li><Link to = "">Generar productividad diaria</Link></li>
               <li><Link to = "">Elaborar informe de novedades</Link></li>
-              <li><Link to = "">Ingresar novedades</Link></li>
-              <li><Link to = "">Conformar equipos</Link></li>
             </ul>
           </div>
           <div className = "col-12 col-sm-9 col-xl-9 formatoFondoCatalogos">
             <h3> NUEVOS PRODUCTOS </h3>
             <div className = "distribucionCatalogos">
-              <a href = "https://belcorp.esika.com/co/catalogo-virtual/" target = "_blank">
+              <a href = "https://belcorp.esika.com/co/catalogo-virtual/" target = "_blank" rel="noreferrer">
                 <img src = {require(`../imagenes/${props.imagenEsika}`)} alt = "Esika" class = "formatoCatalogos" />
               </a>
-              <a href = "https://lbel.tiendabelcorp.com.co/" target = "_blank">
-                <img src = {require(`../imagenes/${props.imagenCyzone}`)} alt = "Cyzone" class = "formatoCatalogos" />
-              </a>
-              <a href = "https://cyzone.tiendabelcorp.com.co/" target = "_blank">
+              <a href = "https://lbel.tiendabelcorp.com.co/" target = "_blank" rel="noreferrer">
                 <img src = {require(`../imagenes/${props.imagenLbel}`)} alt = "Lbel" class = "formatoCatalogos" />
-              </a>    
+              </a>
+              <a href = "https://cyzone.tiendabelcorp.com.co/" target = "_blank" rel="noreferrer">
+                <img src = {require(`../imagenes/${props.imagenCyzone}`)} alt = "Cyzone" class = "formatoCatalogos" />
+              </a>     
             </div>
           </div>
         </article>

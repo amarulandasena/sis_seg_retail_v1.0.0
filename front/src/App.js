@@ -21,11 +21,12 @@ import ConsultarHistoricoTiendas from './tiendas/ConsultarHistoricoTiendas';
 import CrearReservas from './reservas/CrearReservas';
 import EditarReservas from './reservas/EditarReservas';
 import EliminarReservas from './reservas/EliminarReservas';
+import ConsultarReservas from './cargarProductos/ConsultarReservas';
 
 import ValidarReservas from './cargarProductos/ValidarReserva';
-import ConsultarReservas from './cargarProductos/ConsultarReservas';
 import RegistrarMarcado from './cargarProductos/RegistrarMarcado';
 import CambiarEstadoReserva from './cargarProductos/CambiarEstadoReserva';
+import IngresarSegregado from './cargarProductos/IngresarSegregado';
 
 import { Routes, Route} from "react-router-dom";
 import { useState } from 'react';
@@ -71,11 +72,12 @@ function App() {
         <Route path = '/CrearReservas' element = { < CrearReservas />} />
         <Route path = '/EditarReservas' element = { < EditarReservas />} />
         <Route path = '/EliminarReservas' element = { < EliminarReservas />} />
+        <Route path = 'ConsultarReservas' element = { < ConsultarReservas />} />
 
         <Route path = '/ValidarReservas' element = {< ValidarReservas />} />
-        <Route path = 'ConsultarReservas' element = { < ConsultarReservas />} />
         <Route path = '/RegistrarMarcado' element = { < RegistrarMarcado />} />
         <Route path = '/CambiarEstado' element = { < CambiarEstadoReserva />} />
+        <Route path = 'RegistrarSegregado' element = { < IngresarSegregado />} />
 
       </Routes>
       
