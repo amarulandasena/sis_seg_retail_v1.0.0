@@ -58,11 +58,11 @@ function EliminarTiendas () {
             </em>
           </p>
 
-          <div className ="col-md-6">
+          <div className ="col-md-4">
             <label htmlFor="codigoTienda" className="form-label">Código tienda</label>
             <input type="text" className="form-control" id="codigoTienda" onChange = {(e) => setCodTienda(e.target.value)} required placeholder = "Como registra en la base de datos" />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <button className="btn btn-primary" type="submit" onClick={eliminarTienda} >ELIMINAR</button>
           </div>
         </form>

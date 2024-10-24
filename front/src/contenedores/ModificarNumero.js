@@ -73,7 +73,7 @@ function ModificarNumero () {
 
           <p>
             <em>
-              * Ingrese el código de la etiqueta que desea eliminar. <br/>
+              * Ingrese el código de la etiqueta que desea modificar. <br/>
             </em>
           </p>
 

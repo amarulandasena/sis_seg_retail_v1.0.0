@@ -87,7 +87,7 @@ function ProductosReservas () {
 
           <p>
             <em>
-              <strong> * Ingrese primero todos los productos incluidos dentro de la reserva. </strong>
+               * Ingrese primero todos los productos incluidos dentro de la reserva.
             </em>
           </p>
 
