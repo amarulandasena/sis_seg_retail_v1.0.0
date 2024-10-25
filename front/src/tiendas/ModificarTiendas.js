@@ -64,9 +64,7 @@ function ModificarTiendas () {
         message = data.message;
         alert(message);
         });
-  
       limpiarFormulario.current.reset();
-
   }
 
   return (

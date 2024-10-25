@@ -1,7 +1,5 @@
 /* Componente que en conjunto permite editar la información de las reservas */
-
 import { React } from 'react';
-
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
 
@@ -11,7 +9,6 @@ import EliminarProductosReservas from './EliminarProductosReservas';
 import RegresarAPP from '../componentes/RegresarAPP';
 
 function EditarReservas () {
-
   let rolUsuario = localStorage.getItem("rolUsuario");
   let permitir = true;
 

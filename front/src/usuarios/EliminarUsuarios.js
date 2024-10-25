@@ -1,4 +1,4 @@
-/* Componente que permitirá modificar, consultar o eliminar un usuario, según el evento y los props que reciba. */
+/* Componente que permitirá eliminar un usuario */
 
 import { React, useState, useRef } from 'react';
 import '../css/formatoExterno.css';
@@ -48,7 +48,6 @@ function EliminarUsuarios () {
     limpiarFormulario.current.reset();
   };
 
-  
   
   return (
     (permitir) ? 

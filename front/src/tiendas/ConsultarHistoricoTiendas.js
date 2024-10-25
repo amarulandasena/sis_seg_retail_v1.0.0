@@ -1,4 +1,4 @@
-/* Funcionalidad que permite conocer todas las resservas hechas por una tienda */
+/* Funcionalidad que permite conocer todas las reservas hechas por una tienda */
 
 import { React, useState, useRef } from 'react';
 import '../css/formatoExterno.css';
@@ -38,7 +38,6 @@ function ConsultarHistoricoTiendas () {
  
   }
 
-  
   const consultarHistoricoTienda = async (e) => {
     e.preventDefault();
 
@@ -60,7 +59,6 @@ function ConsultarHistoricoTiendas () {
 
       limpiarFormulario.current.reset();
   }
-
 
   return (
     (permitir) ?

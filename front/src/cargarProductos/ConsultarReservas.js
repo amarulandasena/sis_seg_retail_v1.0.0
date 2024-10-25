@@ -65,16 +65,12 @@ function ConsultarReservas () {
         message = data.message;
         alert(message);
       } else {
-        console.log(data);
-
         data.forEach((prod) => {
-          
           let nuevaFila = document.createElement('tr');
           nuevaFila.innerHTML = `<th scope="row"> ${prod.codProducto}  </th>
                                  <th scope="col"> ${prod.codReserva} </th>
                                  <th scope="col"> ${prod.nombreProducto} </th>
                                  <th scope="col"> ${prod.cantidadProducto} </th>`
-
           cuerpoTabla.appendChild(nuevaFila);
 
         })

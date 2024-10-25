@@ -88,8 +88,8 @@ const editarEstado = async (e) => {
             <button className="btn btn-primary margenBoton" type="submit" onClick = {editarEstado}>Editar</button>
           </div> 
         </form>
-        <RegresarAPP />
       </section>
+      <RegresarAPP />
     </main> : null
 
   )

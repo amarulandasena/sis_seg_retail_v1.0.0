@@ -1,4 +1,4 @@
-/* Módulo para consultar, eliminar o modificar una tienda */
+/* Módulo para consultar una tienda */
 
 import { React, useState, useRef } from 'react';
 import '../css/formatoExterno.css';

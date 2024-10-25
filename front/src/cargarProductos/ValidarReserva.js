@@ -47,8 +47,6 @@ function ValidarReservas () {
         message = data.message;
         alert(message);
       } else {
-        console.log(data);
-
         data.forEach((prod) => {
           
           let nuevaFila = document.createElement('tr');
@@ -56,7 +54,6 @@ function ValidarReservas () {
                                  <th scope="col"> ${prod.codReserva} </th>
                                  <th scope="col"> ${prod.nombreProducto} </th>
                                  <th scope="col"> ${prod.cantidadProducto} </th>`
-
           cuerpoTabla.appendChild(nuevaFila);
 
         })
