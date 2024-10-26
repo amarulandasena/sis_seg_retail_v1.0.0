@@ -1,3 +1,5 @@
+/* Componente que permite agregar los productos que incluye la resserva */
+
 import { React, useState } from 'react';
 
 import '../css/formatoExterno.css';

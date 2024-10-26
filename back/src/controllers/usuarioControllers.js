@@ -3,9 +3,6 @@
 const database = require('../config/database');
 const mysql2 = require('mysql2');
 
-// Importamos el paquete para implementar el manejo de las promesas a través de async y await.
-// const asyncHandler = require("express-async-handler");
-
 
 const crearUsuario = (req, res, next) => {
     const { tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
