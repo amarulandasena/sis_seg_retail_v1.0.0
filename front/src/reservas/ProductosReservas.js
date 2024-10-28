@@ -1,6 +1,6 @@
 /* Componente que permite agregar los productos que incluye la resserva */
 
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 
 import '../css/formatoExterno.css';
 import '../css/formatoInterno.css';
@@ -15,6 +15,9 @@ function ProductosReservas () {
 
   // Creamos una variable para almacenar los mensajes enviados por el servidor(API) y el perfil del usuario.
   let message = " ";
+
+  // Constante para la limpieza del formulario.
+  const limpiarFormulario = useRef();
 
   // Objeto para almacenar los productos en el arreglo.
   let detalleProducto = {
@@ -78,13 +81,16 @@ function ProductosReservas () {
       alert(message);
       crearTabla();
     });  
+
+    limpiarFormulario.current.reset();
+
   }
 
 
   return (
     <main className = "container-fluid fondoUsuarios">
       <section className = "row formatoUsuarios">
-        <form className="row g-3 text-center needs-validation">
+        <form className="row g-3 text-center needs-validation" ref = {limpiarFormulario}>
           <h3> INGRESAR PRODUCTOS </h3>
 
           <p>

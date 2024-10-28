@@ -44,6 +44,8 @@ function ConsultarReservas () {
         setEstadoReserva(data.estadoReserva);
       }
     })
+
+    limpiarFormulario.current.reset();
   }
   
   const buscarProductos = async (e) => {

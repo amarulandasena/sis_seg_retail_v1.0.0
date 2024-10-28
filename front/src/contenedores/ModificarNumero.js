@@ -36,7 +36,7 @@ function ModificarNumero () {
 
     // Validamos que todos los datos sean ingresados.
     if (!codReserva || !codTienda || !codContenedor | !fechaFacturacion || !codSalida){
-      alert('Ingrese todos los datos de la reserva.');
+      alert('Ingrese todos los datos del contenedor.');
       return;
     }
 
