@@ -27,6 +27,19 @@ function EliminarReservas () {
     return;
   } 
 
+  // Función para eliminar los productos de la reserva.
+  const eliminarProductosReserva = async () => {
+
+    await fetch(`http://localhost:3001/productosReserva/producto/${codReserva}`, {
+      method : 'DELETE',
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      message = data.message;
+      alert(message);
+    })
+  }
+
   //Función para eliminar la reserva de la base de datos.
   const eliminarReserva = async (e) => {
     e.preventDefault();
@@ -43,9 +56,10 @@ function EliminarReservas () {
     .then((response) => response.json()) 
     .then((data) => {
         message = data.message; 
-        alert(message);  
+        alert(message); 
+         
     })
-
+    eliminarProductosReserva();
     limpiarFormulario.current.reset();
   }
 

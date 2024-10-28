@@ -59,9 +59,28 @@ const eliminarProductosReserva = (req, res, next) => {
   
 }
 
+const eliminarReservaCompleta = (req, res, next) => {
+
+	const { codReserva } = req.params;
+  
+	const eliminarConsulta = `DELETE FROM productosreserva WHERE codReserva = ?;`;
+	const consulta = mysql2.format(eliminarConsulta, [codReserva]);
+  
+	database.query(consulta, (err, result) => {
+	  if (err) {
+		res.json({message : 'Productos no encontrados.'});
+		next(err);
+	  } else {
+		res.json({ message: 'Productos eliminados correctamente.' });
+	  }
+	  
+	})
+  
+}
 
 module.exports = {
   crearProductosReserva,
   eliminarProductosReserva,
-  leerProducto
+  leerProducto,
+  eliminarReservaCompleta
 }
