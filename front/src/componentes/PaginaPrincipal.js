@@ -40,10 +40,10 @@ function PaginaPrincipal (props) {
         <ul>
           <li><Link to="/ConsultarUsuarios" className="dropdown-item formatoMenu">Consultar usuario</Link></li>
           <li><Link to="/CrearReservas" className="dropdown-item formatoMenu">Crear reserva</Link></li>
+          <li><Link to="/ConsultarReservas" className="dropdown-item formatoMenu">Consultar reserva</Link></li>
           <li><Link to="/RegistrarMarcado" className="dropdown-item formatoMenu">Registrar marcado</Link></li>
           <li><Link to="/RegistrarSegregado" className="dropdown-item formatoMenu">Ingresar segregado</Link></li>
-          <li><Link to = "">Generar productividad diaria</Link></li>
-          <li><Link to = "">Elaborar informe de novedades</Link></li>
+          <li><Link to="/AsignarNumero" className="dropdown-item formatoMenu">Asignar número contenedor</Link></li>
         </ul>
       </div>
       <div className = "col-12 col-sm-9 col-xl-9 formatoFondoCatalogos">

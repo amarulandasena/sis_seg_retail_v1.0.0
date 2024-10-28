@@ -71,6 +71,10 @@
     margin-right: 5px;
 }
 
+.formatoTituloMenu {
+    margin-left: 20px;
+}
+
 .formatoMenu {
     font-family: 'Gill Sans MT', sans-serif;
     font-weight: bold;

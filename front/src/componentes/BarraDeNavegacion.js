@@ -16,20 +16,8 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
 
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Supervisar retail
-              </a>
-              <ul className="dropdown-menu">
-                <li><Link to="" className="dropdown-item formatoMenu">Salida</Link></li>
-                <li><Link to="" className="dropdown-item formatoMenu">Gestionar informes</Link></li>
-                <li><Link to="" className="dropdown-item formatoMenu">Equipo</Link></li>
-                <li><a className="dropdown-item formatoMenu" href="#">Estado producto</a></li>
-              </ul>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Administrar usuarios
+              <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Administrar datos de usuarios
               </a>
               <ul className="dropdown-menu">
                 <li><Link to="/CrearUsuarios" className="dropdown-item formatoMenu">Crear usuario</Link></li>
@@ -40,8 +28,8 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
             </li>
 
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Administrar tiendas
+              <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Administrar datos de tiendas
               </a>
               <ul className="dropdown-menu">
                 <li><Link to="/CrearTiendas" className="dropdown-item formatoMenu">Crear tienda</Link></li>
@@ -54,8 +42,8 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
             </li>
 
 
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item dropdown formatoTituloMenu">
+              <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Administrar reservas
               </a>
               <ul className="dropdown-menu">
@@ -66,8 +54,8 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
               </ul>
             </li>
 
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item dropdown formatoTituloMenu">
+              <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Cargar productos
               </a>
               <ul className="dropdown-menu">
@@ -79,7 +67,7 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
             </li>
 
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Contenedores
               </a>
               <ul className="dropdown-menu">
@@ -91,11 +79,11 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
             </li>
 
             <li className="nav-item">
-              <Link to="" className="nav-link" aria-current="page">Ayuda</Link>
+              <Link to="" className="nav-link formatoTituloMenu" aria-current="page">Ayuda</Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/" className="nav-link" aria-current="page">Cerrar Sesión</Link>
+              <Link to="/" className="nav-link formatoTituloMenu" aria-current="page">Cerrar Sesión</Link>
             </li>
           </ul>
         </div>
