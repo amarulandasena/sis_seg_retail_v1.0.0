@@ -24,7 +24,8 @@ const actualizarEtiqueta = (req, res, next) => {
   const { codContenedor } = req.params;
   const { codSalida, codReserva, codTienda, fechaFacturacion } = req.body;
 
-  const actualizarConsulta = `UPDATE contenedor SET codSalida = ?, fechaFacturacion = ?, codTienda = ?, codReserva = ? WHERE codContenedor = ?;`;
+  const actualizarConsulta = `UPDATE contenedor SET codSalida = ?, fechaFacturacion = ?, codTienda = ?, codReserva = ? 
+                              WHERE codContenedor = ?;`;
   const consulta = mysql2.format(actualizarConsulta, [codSalida, fechaFacturacion, codTienda, codReserva, codContenedor]);
 
   database.query(consulta, (err, result) => {

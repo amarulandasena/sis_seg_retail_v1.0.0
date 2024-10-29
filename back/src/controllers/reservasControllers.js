@@ -35,7 +35,6 @@ const actualizarReserva = (req, res, next) => {
 
 const eliminarReserva = (req, res, next) => {
 
-
   const { codReserva } = req.params;
 
   const eliminarConsulta = `DELETE FROM reserva WHERE codReserva = ?;`;
