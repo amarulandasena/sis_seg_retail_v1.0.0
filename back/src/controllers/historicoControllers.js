@@ -1,13 +1,14 @@
 const database = require('../config/database');
 const mysql2 = require('mysql2');
+const asyncHandler = require('express-async-handler');
 
 
-const leerHistorico = (req, res, next) => {
+const leerHistorico = asyncHandler (async(req, res, next) => {
 
   const { codTienda } = req.params;
 
   const leerConsulta = `SELECT codReserva FROM reserva WHERE codTienda = ?;`;
-  const consulta = mysql2.format(leerConsulta, [codTienda]);
+  const consulta = await mysql2.format(leerConsulta, [codTienda]);
 
   database.query(consulta, (err, result) => {
     if (err) throw err;
@@ -18,15 +19,15 @@ const leerHistorico = (req, res, next) => {
       res.json({ message : 'Tienda no registra historial.'})
     }
   });
-};
+});
 
 
-const eliminarHistorico = (req, res, next) => {
+const eliminarHistorico = asyncHandler (async(req, res, next) => {
 
   const { codTienda } = req.params;
 
   const eliminarConsulta = `DELETE FROM reserva WHERE codTienda = ?;`;
-  const consulta = mysql2.format(eliminarConsulta, [codTienda]);
+  const consulta = await mysql2.format(eliminarConsulta, [codTienda]);
 
   database.query(consulta, (err, result) => {
     if (err) {
@@ -37,7 +38,7 @@ const eliminarHistorico = (req, res, next) => {
     }
     
   })
-}
+});
 
 
 module.exports = {

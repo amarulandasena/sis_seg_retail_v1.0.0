@@ -2,36 +2,37 @@
 
 const database = require('../config/database');
 const mysql2 = require('mysql2');
+const asyncHandler = require('express-async-handler');
 
 
-const crearUsuario = (req, res, next) => {
-    const { tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
+const crearUsuario = asyncHandler (async(req, res, next) => {
+  const { tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
 
-    const crearConsulta = `INSERT INTO usuario(tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna) 
-                          VALUES(?, ?, ?, ?, ?, ?);`;
-    const consulta = mysql2.format(crearConsulta, [tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna]);
+  const crearConsulta = `INSERT INTO usuario(tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna) 
+                        VALUES(?, ?, ?, ?, ?, ?);`;
+  const consulta = await mysql2.format(crearConsulta, [tipoIdentificacion, numIdentificacion, nombres, apellidos, rol, contrasegna]);
 
-    database.query(consulta, (err, result) => {
-        if (err)  {
-            res.send({message: "Usuario ya existe."})
-            next(err);
-        } else{
-            res.send({message: 'Usuario creado correctamente.'}); 
-        }     
-    });
-};
+   database.query(consulta, (err, result) => {
+      if (err)  {
+          res.send({message: "Usuario ya existe."})
+          next(err);
+      } else{
+          res.send({message: 'Usuario creado correctamente.'}); 
+      }     
+  });
+});
 
 
-const actualizarUsuario = (req, res, next) => {
+const actualizarUsuario = asyncHandler (async(req, res, next) => {
     
   const { numIdentificacion } = req.params;
   const { tipoIdentificacion, nombres, apellidos, rol, contrasegna } = req.body;
 
   const actualizarConsulta = `UPDATE usuario SET tipoIdentificacion = ?,  nombres = ?, apellidos = ?, rol = ?, contrasegna = ? 
                               WHERE numIdentificacion = ?;`;
-  const consulta = mysql2.format(actualizarConsulta, [tipoIdentificacion, nombres, apellidos, rol, contrasegna, numIdentificacion]);
+  const consulta = await mysql2.format(actualizarConsulta, [tipoIdentificacion, nombres, apellidos, rol, contrasegna, numIdentificacion]);
 
-  database.query(consulta, (err, result) => {
+   database.query(consulta, (err, result) => {
     if (err) {
       res.send({message : "Usuario no encontrado."});
       next(err);
@@ -39,17 +40,17 @@ const actualizarUsuario = (req, res, next) => {
       res.send({message: "Usuario actualizado correctamente."});
     } 
   });
-};
+});
 
 
-const leerUsuario = (req, res, next) => {   
+const leerUsuario = asyncHandler (async(req, res, next) => {   
 
   const { numIdentificacion } = req.params;
 
   const leerConsulta = `SELECT * FROM usuario WHERE numIdentificacion = ?;`;
-  const consulta = mysql2.format(leerConsulta, [numIdentificacion]);
+  const consulta = await mysql2.format(leerConsulta, [numIdentificacion]);
 
-  database.query(consulta, (err, result) => {
+   database.query(consulta, (err, result) => {
     if (err) throw err;
 
     if (result[0] !== undefined) {
@@ -58,25 +59,25 @@ const leerUsuario = (req, res, next) => {
       res.json({ message: 'Usuario no registrado.' });
     }
   });
-}; 
+}); 
 
 
-const eliminarUsuario = (req, res, next) => {
+const eliminarUsuario = asyncHandler (async(req, res, next) => {
     
-    const { numIdentificacion } = req.params;
+  const { numIdentificacion } = req.params;
 
-    const eliminarConsulta = `DELETE FROM usuario WHERE numIdentificacion = ?;`;
-    const consulta = mysql2.format(eliminarConsulta, [numIdentificacion]);
+  const eliminarConsulta = `DELETE FROM usuario WHERE numIdentificacion = ?;`;
+  const consulta = await mysql2.format(eliminarConsulta, [numIdentificacion]);
 
-    database.query(consulta, (err, result) => {
-        if (err) {
-          res.json({message : 'Usuario no encontrado.'});
-          next(err);
-        } else {
-          res.json({ message: 'Usuario eliminado.' });
-        }  
-    })
-};
+   database.query(consulta, (err, result) => {
+      if (err) {
+        res.json({message : 'Usuario no encontrado.'});
+        next(err);
+      } else {
+        res.json({ message: 'Usuario eliminado.' });
+      }  
+  })
+});
 
 module.exports = {
     crearUsuario,

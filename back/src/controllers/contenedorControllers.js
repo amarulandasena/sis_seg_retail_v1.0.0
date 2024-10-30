@@ -1,13 +1,14 @@
 const database = require('../config/database');
 const mysql2 = require('mysql2');
+const asyncHandler = require('express-async-handler');
 
-const crearEtiqueta = (req, res, next) => {
+const crearEtiqueta = asyncHandler (async(req, res, next) => {
 
   const { codContenedor, codSalida, codReserva, codTienda, fechaFacturacion } = req.body;
 
   crearConsulta = `INSERT INTO contenedor(codContenedor, codSalida, fechaFacturacion, codTienda, codReserva )
                   VALUES(?, ?, ?, ?, ?);`;
-  const consulta = mysql2.format(crearConsulta, [codContenedor, codSalida, fechaFacturacion, codTienda, codReserva]);
+  const consulta = await mysql2.format(crearConsulta, [codContenedor, codSalida, fechaFacturacion, codTienda, codReserva]);
 
   database.query(consulta, (err, result) => {
     if (err)  {
@@ -17,16 +18,16 @@ const crearEtiqueta = (req, res, next) => {
       res.send({message: 'Etiqueta creada correctamente.'}); 
     }     
   });
-};
+}) ;
 
-const actualizarEtiqueta = (req, res, next) => {
+const actualizarEtiqueta = asyncHandler (async(req, res, next) => {
 
   const { codContenedor } = req.params;
   const { codSalida, codReserva, codTienda, fechaFacturacion } = req.body;
 
   const actualizarConsulta = `UPDATE contenedor SET codSalida = ?, fechaFacturacion = ?, codTienda = ?, codReserva = ? 
                               WHERE codContenedor = ?;`;
-  const consulta = mysql2.format(actualizarConsulta, [codSalida, fechaFacturacion, codTienda, codReserva, codContenedor]);
+  const consulta = await mysql2.format(actualizarConsulta, [codSalida, fechaFacturacion, codTienda, codReserva, codContenedor]);
 
   database.query(consulta, (err, result) => {
     if (err) {
@@ -36,14 +37,14 @@ const actualizarEtiqueta = (req, res, next) => {
       res.send({message: "Etiqueta actualizada correctamente."});
     }
   });
-};
+}) ;
 
-const eliminarEtiqueta = (req, res, next) => {
+const eliminarEtiqueta = asyncHandler (async(req, res, next) => {
 
   const { codContenedor } = req.params;
 
   const eliminarConsulta = `DELETE FROM contenedor WHERE codContenedor = ?;`;
-  const consulta = mysql2.format(eliminarConsulta, [codContenedor]);
+  const consulta = await mysql2.format(eliminarConsulta, [codContenedor]);
 
   database.query(consulta, (err, result) => {
     if (err) {
@@ -54,14 +55,14 @@ const eliminarEtiqueta = (req, res, next) => {
     }
     
   })
-};
+}) ;
 
-const leerEtiqueta = (req, res, next) => {   
+const leerEtiqueta = asyncHandler (async(req, res, next) => {   
 
   const { codContenedor } = req.params;
 
   const leerConsulta = `SELECT * FROM contenedor WHERE codContenedor = ?;`;
-  const consulta = mysql2.format(leerConsulta, [codContenedor]);
+  const consulta = await mysql2.format(leerConsulta, [codContenedor]);
 
   database.query(consulta, (err, result) => {
     if (err) throw err;
@@ -72,7 +73,7 @@ const leerEtiqueta = (req, res, next) => {
       res.json({ message: 'Etiqueta no registrada.' });
     }
   });
-}; 
+}) ; 
 
 module.exports = {
   crearEtiqueta,

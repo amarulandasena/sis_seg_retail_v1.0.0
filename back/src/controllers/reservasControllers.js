@@ -1,13 +1,14 @@
 const database = require('../config/database');
 const mysql2 = require('mysql2');
+const asyncHandler = require('express-async-handler');
 
-const crearReserva = (req, res, next) => {
+const crearReserva = asyncHandler (async(req, res, next) => {
 
   const {codReserva, codTienda, nombreTienda, fechaFacturacion, estadoReserva } = req.body;
 
   crearConsulta = `INSERT INTO reserva(codReserva, codTienda, nombreTienda, fechaFacturacion, estadoReserva)
                   VALUES(?, ?, ?, ?, ?);`;
-  const consulta = mysql2.format(crearConsulta, [codReserva, codTienda, nombreTienda, fechaFacturacion, estadoReserva]);
+  const consulta = await mysql2.format(crearConsulta, [codReserva, codTienda, nombreTienda, fechaFacturacion, estadoReserva]);
 
   database.query(consulta, (err, result) => {
     if (err)  {
@@ -17,28 +18,28 @@ const crearReserva = (req, res, next) => {
       res.send({message: 'Reserva creada correctamente.'}); 
     }     
   });
-};
+});
 
-const actualizarReserva = (req, res, next) => {
+const actualizarReserva = asyncHandler (async(req, res, next) => {
 
   const { codReserva } = req.params;
   const { estadoReserva } = req.body;
 
   const actualizarConsulta = `UPDATE reserva SET estadoReserva = ? WHERE codReserva = ?;`;
-  const consulta = mysql2.format(actualizarConsulta, [estadoReserva, codReserva]);
+  const consulta = await mysql2.format(actualizarConsulta, [estadoReserva, codReserva]);
 
   database.query(consulta, (err, result) => {
     if (err) throw err;
     res.send({message: "Estado actualizado correctamente."});
   });
-}
+});
 
-const eliminarReserva = (req, res, next) => {
+const eliminarReserva = asyncHandler (async(req, res, next) => {
 
   const { codReserva } = req.params;
 
   const eliminarConsulta = `DELETE FROM reserva WHERE codReserva = ?;`;
-  const consulta = mysql2.format(eliminarConsulta, [codReserva]);
+  const consulta = await mysql2.format(eliminarConsulta, [codReserva]);
 
   database.query(consulta, (err, result) => {
     if (err) {
@@ -49,14 +50,14 @@ const eliminarReserva = (req, res, next) => {
     }
       
   })
-}
+});
 
-const leerReserva = (req, res, next) => {
+const leerReserva = asyncHandler (async(req, res, next) => {
 
   const { codReserva } = req.params;
 
   const leerConsulta = `SELECT * FROM reserva WHERE codReserva = ?;`;
-  const consulta = mysql2.format(leerConsulta, [codReserva]);
+  const consulta = await mysql2.format(leerConsulta, [codReserva]);
 
   database.query(consulta, (err, result) => {
     if (err) throw err;
@@ -67,7 +68,7 @@ const leerReserva = (req, res, next) => {
       res.json({ message: 'Reserva no registrada.' });
     }
   });
-}
+});
 
 
 module.exports = {
