@@ -124,7 +124,7 @@ describe('Probaremos el CRUD para el moódulo de tiendas', () => {
     /* Eliminar tienda */
     test('Debería permitir eliminar una tienda', async () => {
 
-        const response = await request (app).delete('/tienda/BAR002')
+        const response = await request (app).delete('/tienda/BAR002');
 
         expect(response.status).toBe(200);
         expect(response.body).toEqual({ message: 'Tienda eliminada.' });
