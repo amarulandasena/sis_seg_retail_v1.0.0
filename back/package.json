@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/config/index.js"
+    "dev": "nodemon src/config/index.js",
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "Andres Marulanda",
@@ -15,5 +16,9 @@
     "express-async-handler": "^1.2.0",
     "mysql2": "^3.11.3",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }
