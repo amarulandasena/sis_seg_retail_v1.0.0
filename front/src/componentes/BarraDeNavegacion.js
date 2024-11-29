@@ -44,7 +44,7 @@ function BarraDeNavegacion({ banderaBarra, imagen }) {
 
             <li className="nav-item dropdown formatoTituloMenu">
               <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Administrar reservas
+                Administrar reservas de tiendas
               </a>
               <ul className="dropdown-menu">
                 <li><Link to="/CrearReservas" className="dropdown-item formatoMenu">Crear reserva</Link></li>

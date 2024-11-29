@@ -27,7 +27,7 @@ function ModificarTiendas () {
   const limpiarFormulario = useRef();
 
   // Validar el perfil del usuario.
-  if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail') {
+  if (rolUsuario != 'Administrador' && rolUsuario != 'Gerente' && rolUsuario != 'Gerente retail' && rolUsuario != "Digitador") {
     alert('Usuario no cumple con el perfil.');
     permitir = false;
     return;
