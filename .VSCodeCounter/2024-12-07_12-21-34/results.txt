@@ -1,0 +1,127 @@
+Date : 2024-12-07 12:21:34
+Directory : c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0
+Total : 79 files,  29159 codes, 335 comments, 1150 blanks, all 30644 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          5 |     24,921 |          0 |          5 |     24,926 |
+| JavaScript |         64 |      3,857 |        285 |      1,031 |      5,173 |
+| CSS        |          7 |        319 |         27 |         77 |        423 |
+| Markdown   |          2 |         40 |          0 |         34 |         74 |
+| HTML       |          1 |         22 |         23 |          3 |         48 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                           | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                              |         79 |     29,159 |        335 |      1,150 |     30,644 |
+| . (Files)                                                                                                      |          1 |          2 |          0 |          1 |          3 |
+| back                                                                                                           |         26 |      5,903 |         91 |        409 |      6,403 |
+| back (Files)                                                                                                   |          2 |      5,013 |          0 |          2 |      5,015 |
+| back\src                                                                                                       |         18 |        474 |         41 |        206 |        721 |
+| back\src\config                                                                                                |          3 |         44 |         13 |         18 |         75 |
+| back\src\controllers                                                                                           |          7 |        360 |          3 |        129 |        492 |
+| back\src\routes                                                                                                |          8 |         70 |         25 |         59 |        154 |
+| back\tests                                                                                                     |          6 |        416 |         50 |        201 |        667 |
+| front                                                                                                          |         52 |     23,254 |        244 |        740 |     24,238 |
+| front (Files)                                                                                                  |          3 |     19,921 |          0 |         35 |     19,956 |
+| front\public                                                                                                   |          2 |         47 |         23 |          4 |         74 |
+| front\src                                                                                                      |         47 |      3,286 |        221 |        701 |      4,208 |
+| front\src (Files)                                                                                              |          7 |        133 |          8 |         38 |        179 |
+| front\src\cargarProductos                                                                                      |          5 |        592 |         47 |        141 |        780 |
+| front\src\componentes                                                                                          |          7 |        293 |         10 |         52 |        355 |
+| front\src\contenedores                                                                                         |          5 |        399 |         35 |         88 |        522 |
+| front\src\css                                                                                                  |          5 |        302 |         26 |         72 |        400 |
+| front\src\reservas                                                                                             |          8 |        634 |         45 |        128 |        807 |
+| front\src\tiendas                                                                                              |          6 |        562 |         30 |        113 |        705 |
+| front\src\usuarios                                                                                             |          4 |        371 |         20 |         69 |        460 |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                       | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\README.md                                         | Markdown   |          2 |          0 |          1 |          3 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\package-lock.json                            | JSON       |      4,989 |          0 |          1 |      4,990 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\package.json                                 | JSON       |         24 |          0 |          1 |         25 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\config\app.js                            | JavaScript |         23 |          6 |          6 |         35 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\config\database.js                       | JavaScript |          8 |          4 |          3 |         15 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\config\index.js                          | JavaScript |         13 |          3 |          9 |         25 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\cargarControllers.js         | JavaScript |         19 |          0 |          8 |         27 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\contenedorControllers.js     | JavaScript |         64 |          0 |         19 |         83 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\historicoControllers.js      | JavaScript |         33 |          0 |         14 |         47 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\productosControllers.js      | JavaScript |         62 |          1 |         24 |         87 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\reservasControllers.js       | JavaScript |         59 |          0 |         20 |         79 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\tiendaControllers.js         | JavaScript |         59 |          1 |         20 |         80 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\controllers\usuarioControllers.js        | JavaScript |         64 |          1 |         24 |         89 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\cargarRoutes.js                   | JavaScript |          5 |          1 |          4 |         10 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\contenedorRoutes.js               | JavaScript |          8 |          4 |          7 |         19 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\historicoRoutes.js                | JavaScript |          6 |          2 |          7 |         15 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\loginRoute.js                     | JavaScript |         19 |          2 |          9 |         30 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\productosRoutes.js                | JavaScript |          8 |          4 |         10 |         22 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\reservasRoutes.js                 | JavaScript |          8 |          4 |          7 |         19 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\tiendaRoutes.js                   | JavaScript |          8 |          4 |          7 |         19 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\src\routes\usuarioRoutes.js                  | JavaScript |          8 |          4 |          8 |         20 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\contenedor.test.js                     | JavaScript |         77 |         10 |         44 |        131 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\historico.test.js                      | JavaScript |         25 |          6 |         14 |         45 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\login.test.js                          | JavaScript |         34 |          2 |         16 |         52 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\reservas.test.js                       | JavaScript |         90 |         12 |         59 |        161 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\tienda.test.js                         | JavaScript |        100 |         10 |         31 |        141 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\back\tests\usuario.test.js                        | JavaScript |         90 |         10 |         37 |        137 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\README.md                                   | Markdown   |         38 |          0 |         33 |         71 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\package-lock.json                           | JSON       |     19,844 |          0 |          1 |     19,845 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\package.json                                | JSON       |         39 |          0 |          1 |         40 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\public\index.html                           | HTML       |         22 |         23 |          3 |         48 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\public\manifest.json                        | JSON       |         25 |          0 |          1 |         26 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\App.css                                 | CSS        |          5 |          1 |          3 |          9 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\App.js                                  | JavaScript |         83 |          0 |         24 |        107 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\App.test.js                             | JavaScript |          7 |          0 |          2 |          9 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\cargarProductos\CambiarEstadoReserva.js | JavaScript |         73 |          7 |         18 |         98 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\cargarProductos\ConsultarReservas.js    | JavaScript |        128 |          8 |         22 |        158 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\cargarProductos\IngresarSegregado.js    | JavaScript |        155 |         12 |         41 |        208 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\cargarProductos\RegistrarMarcado.js     | JavaScript |        155 |         12 |         39 |        206 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\cargarProductos\ValidarReserva.js       | JavaScript |         81 |          8 |         21 |        110 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\BarraDeNavegacion.js        | JavaScript |         83 |          0 |         12 |         95 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\Certificaciones.js          | JavaScript |         15 |          1 |          3 |         19 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\Login.js                    | JavaScript |         66 |          6 |         19 |         91 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\MensajeIngresoDatos.js      | JavaScript |         16 |          0 |          5 |         21 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\PaginaPrincipal.js          | JavaScript |         86 |          1 |          6 |         93 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\PieDePagina.js              | JavaScript |         14 |          1 |          3 |         18 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\componentes\RegresarAPP.js              | JavaScript |         13 |          1 |          4 |         18 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\contenedores\AsignarNumero.js           | JavaScript |         89 |          7 |         18 |        114 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\contenedores\BuscarReservasDia.js       | JavaScript |         77 |          8 |         23 |        108 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\contenedores\ConsultarNumero.js         | JavaScript |         90 |          6 |         15 |        111 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\contenedores\EliminarNumero.js          | JavaScript |         56 |          7 |         15 |         78 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\contenedores\ModificarNumero.js         | JavaScript |         87 |          7 |         17 |        111 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\css\componentesComunes.css              | CSS        |         69 |          4 |         14 |         87 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\css\formatoExterno.css                  | CSS        |         30 |          2 |         11 |         43 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\css\formatoInterno.css                  | CSS        |         35 |          6 |          8 |         49 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\css\login.css                           | CSS        |         30 |          3 |          5 |         38 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\css\paginaPrincipal.css                 | CSS        |        138 |         11 |         34 |        183 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\index.css                               | CSS        |         12 |          0 |          2 |         14 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\index.js                                | JavaScript |         13 |          3 |          4 |         20 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reportWebVitals.js                      | JavaScript |         12 |          0 |          2 |         14 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\AgregarProductosReserva.js     | JavaScript |        150 |          8 |         23 |        181 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\CrearReservas.js               | JavaScript |         24 |          1 |          6 |         31 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\EditarEstado.js                | JavaScript |         58 |          5 |         15 |         78 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\EditarReservas.js              | JavaScript |         26 |          2 |          5 |         33 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\EliminarProductosReservas.js   | JavaScript |         78 |          7 |         16 |        101 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\EliminarReservas.js            | JavaScript |         61 |          8 |         17 |         86 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\InfoReserva.js                 | JavaScript |         81 |          5 |         18 |        104 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\reservas\ProductosReservas.js           | JavaScript |        156 |          9 |         28 |        193 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\setupTests.js                           | JavaScript |          1 |          4 |          1 |          6 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\ConsultarHistoricoTiendas.js    | JavaScript |         77 |          5 |         22 |        104 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\ConsultarTiendas.js             | JavaScript |        101 |          5 |         21 |        127 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\CrearTiendas.js                 | JavaScript |        128 |          5 |         18 |        151 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\EliminarHistoricoTienda.js      | JavaScript |         72 |          6 |         18 |         96 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\EliminarTiendas.js              | JavaScript |         56 |          3 |         16 |         75 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\tiendas\ModificarTiendas.js             | JavaScript |        128 |          6 |         18 |        152 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\usuarios\ConsultarUsuarios.js           | JavaScript |         91 |          3 |         13 |        107 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\usuarios\CrearUsuarios.js               | JavaScript |        107 |          5 |         20 |        132 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\usuarios\EliminarUsuarios.js            | JavaScript |         67 |          6 |         16 |         89 |
+| c:\Users\Andres_Marulanda\Desktop\ADSO\sis_seg_retail_v1.0.0\front\src\usuarios\ModificarUsuarios.js           | JavaScript |        106 |          6 |         20 |        132 |
+| Total                                                                                                          |            |     29,159 |        335 |      1,150 |     30,644 |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
